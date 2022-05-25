@@ -9,7 +9,7 @@ function test(city) {
         },
         success: function (data) {
             console.log(data.location)
-            document.getElementById('test').innerHTML = data.location.tz_id;
+            document.getElementById('test').innerHTML = data.location.country;
 
         }
     });
