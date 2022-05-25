@@ -1,6 +1,6 @@
 function test(city) {
     $.ajax('https://api.weatherapi.com/v1/current.json', {
-        type: 'get',
+        type: 'GET',
         contentType: 'application/json',
         data: {
             key: 'b301c07a26014a9cbb355734222505',
