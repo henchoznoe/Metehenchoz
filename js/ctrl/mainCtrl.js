@@ -3,7 +3,7 @@ function test(city) {
         type: 'get',
         contentType: 'application/json',
         data: {
-            key: '36ff9f86e4a940ceb74131540222305',
+            key: 'b301c07a26014a9cbb355734222505',
             q: city,
             aqi: 'no'
         },
@@ -14,6 +14,7 @@ function test(city) {
         }
     });
 }
+
 function lol() {
     console.log($("#abc").html());
     test($("#abc").html());
