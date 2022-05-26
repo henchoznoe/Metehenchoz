@@ -26,6 +26,12 @@ class IndexCtrl {
     });
   }
 
+  loadFooter() {
+    httpServ.chargerFooter("footer", function () {
+      new FooterCtrl();
+    })
+  }
+
 }
 
 /*function test(city) {

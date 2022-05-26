@@ -39,4 +39,12 @@ class HttpServ {
     });
   }
 
+  chargerFooter(vue, callback) {
+    $("#footer").load("views/" + vue + ".html", function () {
+      if (typeof callback !== "undefined") {
+        callback();
+      }
+    });
+  }
+
 }
