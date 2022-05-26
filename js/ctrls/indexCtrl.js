@@ -14,6 +14,7 @@ class IndexCtrl {
 
   constructor() {
     this.loadHome();
+    this.loadFooter();
   }
 
   afficherErreurHttp(msg) {
