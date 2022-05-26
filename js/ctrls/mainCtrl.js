@@ -1,4 +1,34 @@
-function test(city) {
+/*
+  But     : Classe contrôleur principale
+  Auteur  : Noé Henchoz 300221
+  Date    : 26.05.2022
+*/
+
+$().ready(function () {
+  http = new Http();
+  indexCtrl = new IndexCtrl();
+  http.centraliserErreurHttp(mainCtrl.afficherErreurHttp);
+});
+
+class IndexCtrl {
+
+  constructor() {
+    this.loadHome();
+  }
+
+  afficherErreurHttp(msg) {
+    alert(msg);
+  }
+
+  loadHome() {
+    service.chargerVue("home", function () {
+      new HomeCtrl();
+    });
+  }
+
+}
+
+/*function test(city) {
     $.ajax('https://api.weatherapi.com/v1/current.json', {
         type: 'GET',
         contentType: 'application/json',
@@ -22,4 +52,4 @@ function lol() {
 
 function reloadPage() {
     window.location.reload(true);
-}
+}*/
