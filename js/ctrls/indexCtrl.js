@@ -1,13 +1,13 @@
 /*
   But     : Classe contrôleur principale
   Auteur  : Noé Henchoz 300221
-  Date    : 26.05.2022
+  Date    : 26.05.2022 / v1.0 
 */
 
 $().ready(function () {
-  http = new Http();
+  httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
-  http.centraliserErreurHttp(mainCtrl.afficherErreurHttp);
+  httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
 });
 
 class IndexCtrl {
