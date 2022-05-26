@@ -6,6 +6,8 @@
 
 class FooterCtrl {
 
-    constructor() {}
+    constructor() {
+      
+    }
     
 }
