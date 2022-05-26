@@ -21,7 +21,7 @@ class IndexCtrl {
   }
 
   loadHome() {
-    service.chargerVue("home", function () {
+    httpServ.chargerVue("home", function () {
       new HomeCtrl();
     });
   }
