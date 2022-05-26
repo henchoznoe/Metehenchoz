@@ -19,3 +19,7 @@ function lol() {
     console.log($("#abc").html());
     test($("#abc").html());
 }
+
+function reload() {
+    window.location.reload(true);
+}
