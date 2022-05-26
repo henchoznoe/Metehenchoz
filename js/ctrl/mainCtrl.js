@@ -20,6 +20,6 @@ function lol() {
     test($("#abc").html());
 }
 
-function reload() {
+function reloadPage() {
     window.location.reload(true);
 }
