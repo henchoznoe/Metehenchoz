@@ -28,6 +28,10 @@
     <script type="text/javascript" src="js/ctrls/httpServ.js"></script>
     <script type="text/javascript" src="js/ctrls/homeCtrl.js"></script>
     <script type="text/javascript" src="js/ctrls/footerCtrl.js"></script>
+    <script type="text/javascript" src="js/ctrls/forecast.js"></script>
+    <script type="text/javascript" src="js/ctrls/documentation.js"></script>
+    <script type="text/javascript" src="js/ctrls/api.js"></script>
+    <script type="text/javascript" src="js/ctrls/about.js"></script>
     <!-- Icon from font-awesome.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -40,7 +44,7 @@
     <nav class="navbar navbar-expand-md top-0 navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <!-- Title on the left -->
-            <a class="navbar-brand" href="index.html">Météhenchoz</a>
+            <a class="navbar-brand" id="a-home">Météhenchoz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,16 +54,16 @@
                 <!-- Menus -->
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-forecast">Prévisions</a>
+                        <a class="nav-link" id="a-forecast">Prévisions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-documentation">Documentation</a>
+                        <a class="nav-link" id="a-documentation">Documentation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-api">API</a>
+                        <a class="nav-link" id="a-api">API</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-about">A propos</a>
+                        <a class="nav-link" id="a-about">A propos</a>
                     </li>
                 </ul>
                 <!-- Search -->

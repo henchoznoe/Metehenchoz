@@ -8,10 +8,15 @@ $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
   httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
+
+  $("#a-home").click(indexCtrl.loadHome);
+  $("#a-forecast").click(indexCtrl.loadForecast);
+  $("#a-documentation").click(indexCtrl.loadDocumentation);
+  $("#a-api").click(indexCtrl.loadApi);
+  $("#a-about").click(indexCtrl.loadAbout);
 });
 
 class IndexCtrl {
-
   constructor() {
     this.loadHome();
     this.loadFooter();
@@ -30,7 +35,31 @@ class IndexCtrl {
   loadFooter() {
     httpServ.chargerFooter("footer", function () {
       new FooterCtrl();
-    })
+    });
+  }
+
+  loadForecast() {
+    httpServ.chargerVue("forecast", function () {
+      new ForecastCtrl();
+    });
+  }
+
+  loadDocumentation() {
+    httpServ.chargerVue("documentation", function () {
+      new ForecastCtrl();
+    });
+  }
+
+  loadApi() {
+    httpServ.chargerVue("api", function () {
+      new ForecastCtrl();
+    });
+  }
+
+  loadAbout() {
+    httpServ.chargerVue("about", function () {
+      new ForecastCtrl();
+    });
   }
 
 }
