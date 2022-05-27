@@ -5,6 +5,7 @@
 */
 
 class HttpServ {
+  
   constructor() {}
 
   centraliserErreurHttp(httpErrorCallbackFn) {
