@@ -96,4 +96,4 @@ class IndexCtrl {
 function lol() {
     console.log($("#abc").html());
     test($("#abc").html());
-}
+}*/
