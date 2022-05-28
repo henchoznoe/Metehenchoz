@@ -4,7 +4,7 @@
   Date    : 26.05.2022 / v1.0 
 */
 
-class DocumentationCtrl {
+class DocCtrl {
 
     constructor() {
       

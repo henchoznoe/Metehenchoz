@@ -15,7 +15,7 @@ $().ready(function () {
   $("#a-forecast").click(function() {
     indexCtrl.loadForecast();
   });
-  $("#a-documentation").click(function() {
+  $("#a-doc").click(function() {
     indexCtrl.loadDoc();
   });
   $("#a-api").click(function() {
