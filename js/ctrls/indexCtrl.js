@@ -51,39 +51,27 @@ class IndexCtrl {
   }
 
   loadHome() {
-    httpServ.chargerVue("home", function () {
-      new HomeCtrl();
-    });
+    httpServ.chargerVue("home", function () {new HomeCtrl();});
   }
 
   loadFooter() {
-    httpServ.chargerFooter("footer", function () {
-      new FooterCtrl();
-    });
+    httpServ.chargerFooter("footer", function () {new FooterCtrl();});
   }
 
   loadForecast() {
-    httpServ.chargerVue("forecast", function () {
-      new ForecastCtrl();
-    });
+    httpServ.chargerVue("forecast", function () {new ForecastCtrl();});
   }
 
   loadDoc() {
-    httpServ.chargerVue("doc", function () {
-      new DocCtrl();
-    });
+    httpServ.chargerVue("doc", function () {new DocCtrl();});
   }
 
   loadApi() {
-    httpServ.chargerVue("api", function () {
-      new ApiCtrl();
-    });
+    httpServ.chargerVue("api", function () {new ApiCtrl();});
   }
 
   loadAbout() {
-    httpServ.chargerVue("about", function () {
-      new AboutCtrl();
-    });
+    httpServ.chargerVue("about", function () {new AboutCtrl();});
   }
 
 }
