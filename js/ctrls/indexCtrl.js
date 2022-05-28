@@ -12,7 +12,6 @@ $().ready(function () {
   $("#a-home").click(function () {
     indexCtrl.hideNavCollapsed();
     $("a.nav-link").removeClass("active");
-    $("#a-home").addClass("active");
     indexCtrl.loadHome();
   });
   $("#a-forecast").click(function () {
