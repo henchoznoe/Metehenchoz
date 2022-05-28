@@ -7,7 +7,11 @@
 class AboutCtrl {
 
     constructor() {
-      
+     this.afficherTitre();
     }
     
+    afficherTitre() {
+      let move = document.getElementById('title');
+      move.className += " move";
+    }
 }
