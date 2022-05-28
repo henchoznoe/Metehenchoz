@@ -9,25 +9,32 @@ $().ready(function () {
   indexCtrl = new IndexCtrl();
   httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
 
+  
   $("#a-home").click(function() {
+    indexCtrl.hideNavCollapsed();
     indexCtrl.loadHome();
   });
   $("#a-forecast").click(function() {
+    indexCtrl.hideNavCollapsed();
     indexCtrl.loadForecast();
   });
   $("#a-doc").click(function() {
+    indexCtrl.hideNavCollapsed();
     indexCtrl.loadDoc();
   });
   $("#a-api").click(function() {
+    indexCtrl.hideNavCollapsed();
     indexCtrl.loadApi();
   });
   $("#a-about").click(function () {
+    indexCtrl.hideNavCollapsed();
     indexCtrl.loadAbout();
   });
 
 });
 
 class IndexCtrl {
+
   constructor() {
     this.loadHome();
     this.loadFooter();
@@ -35,6 +42,11 @@ class IndexCtrl {
 
   afficherErreurHttp(msg) {
     alert(msg);
+  }
+
+  hideNavCollapsed() {
+    let nav = document.getElementById('navbarResponsive');
+    nav.className = 'navbar-collapse collapse';
   }
 
   loadHome() {
