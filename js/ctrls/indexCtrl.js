@@ -9,11 +9,27 @@ $().ready(function () {
   indexCtrl = new IndexCtrl();
   httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
 
-  $("#a-home").click(indexCtrl.loadHome);
-  $("#a-forecast").click(indexCtrl.loadForecast);
-  $("#a-documentation").click(indexCtrl.loadDocumentation);
-  $("#a-api").click(indexCtrl.loadApi);
-  $("#a-about").click(indexCtrl.loadAbout);
+  $("#a-home").click(function() {
+    indexCtrl.loadHome();
+    $("#btn-toggler").click();
+  });
+  $("#a-forecast").click(function() {
+    indexCtrl.loadForecast();
+    $("#btn-toggler").click();
+  });
+  $("#a-documentation").click(function() {
+    indexCtrl.loadDocumentation();
+    $("#btn-toggler").click();
+  });
+  $("#a-api").click(function() {
+    indexCtrl.loadApi();
+    $("#btn-toggler").click();
+  });
+  $("#a-about").click(function () {
+    indexCtrl.loadAbout();
+    $("#btn-toggler").click();
+  });
+
 });
 
 class IndexCtrl {
