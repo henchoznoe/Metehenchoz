@@ -11,23 +11,18 @@ $().ready(function () {
 
   $("#a-home").click(function() {
     indexCtrl.loadHome();
-    $("#btn-toggler").click();
   });
   $("#a-forecast").click(function() {
     indexCtrl.loadForecast();
-    $("#btn-toggler").click();
   });
   $("#a-documentation").click(function() {
-    indexCtrl.loadDocumentation();
-    $("#btn-toggler").click();
+    indexCtrl.loadDoc();
   });
   $("#a-api").click(function() {
     indexCtrl.loadApi();
-    $("#btn-toggler").click();
   });
   $("#a-about").click(function () {
     indexCtrl.loadAbout();
-    $("#btn-toggler").click();
   });
 
 });
@@ -60,21 +55,21 @@ class IndexCtrl {
     });
   }
 
-  loadDocumentation() {
-    httpServ.chargerVue("documentation", function () {
-      new ForecastCtrl();
+  loadDoc() {
+    httpServ.chargerVue("doc", function () {
+      new DocCtrl();
     });
   }
 
   loadApi() {
     httpServ.chargerVue("api", function () {
-      new ForecastCtrl();
+      new ApiCtrl();
     });
   }
 
   loadAbout() {
     httpServ.chargerVue("about", function () {
-      new ForecastCtrl();
+      new AboutCtrl();
     });
   }
 
