@@ -8,7 +8,6 @@ $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
   httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
-
   
   $("#a-home").click(function() {
     indexCtrl.hideNavCollapsed();
@@ -46,7 +45,9 @@ class IndexCtrl {
 
   hideNavCollapsed() {
     let nav = document.getElementById('navbarResponsive');
-    nav.className = 'navbar-collapse collapse';
+    if (nav.className.includes('show')) {
+      nav.classList.remove('show');
+    }
   }
 
   loadHome() {
