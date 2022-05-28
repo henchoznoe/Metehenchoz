@@ -8,32 +8,40 @@ $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
   httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
-  
-  $("#a-home").click(function() {
+
+  $("#a-home").click(function () {
     indexCtrl.hideNavCollapsed();
+    $("a.nav-link").removeClass("active");
+    $("#a-home").addClass("active");
     indexCtrl.loadHome();
   });
-  $("#a-forecast").click(function() {
+  $("#a-forecast").click(function () {
     indexCtrl.hideNavCollapsed();
+    $("a.nav-link").removeClass("active");
+    $("#a-forecast").addClass("active");
     indexCtrl.loadForecast();
   });
-  $("#a-doc").click(function() {
+  $("#a-doc").click(function () {
     indexCtrl.hideNavCollapsed();
+    $("a.nav-link").removeClass("active");
+    $("#a-doc").addClass("active");
     indexCtrl.loadDoc();
   });
-  $("#a-api").click(function() {
+  $("#a-api").click(function () {
     indexCtrl.hideNavCollapsed();
+    $("a.nav-link").removeClass("active");
+    $("#a-api").addClass("active");
     indexCtrl.loadApi();
   });
   $("#a-about").click(function () {
     indexCtrl.hideNavCollapsed();
+    $("a.nav-link").removeClass("active");
+    $("#a-about").addClass("active");
     indexCtrl.loadAbout();
   });
-
 });
 
 class IndexCtrl {
-
   constructor() {
     this.loadHome();
     this.loadFooter();
@@ -44,36 +52,47 @@ class IndexCtrl {
   }
 
   hideNavCollapsed() {
-    let nav = document.getElementById('navbarResponsive');
-    if (nav.className.includes('show')) {
-      nav.classList.remove('show');
+    let nav = document.getElementById("navbarResponsive");
+    if (nav.className.includes("show")) {
+      nav.classList.remove("show");
     }
   }
 
   loadHome() {
-    httpServ.chargerVue("home", function () {new HomeCtrl();});
+    httpServ.chargerVue("home", function () {
+      new HomeCtrl();
+    });
   }
 
   loadFooter() {
-    httpServ.chargerFooter("footer", function () {new FooterCtrl();});
+    httpServ.chargerFooter("footer", function () {
+      new FooterCtrl();
+    });
   }
 
   loadForecast() {
-    httpServ.chargerVue("forecast", function () {new ForecastCtrl();});
+    httpServ.chargerVue("forecast", function () {
+      new ForecastCtrl();
+    });
   }
 
   loadDoc() {
-    httpServ.chargerVue("doc", function () {new DocCtrl();});
+    httpServ.chargerVue("doc", function () {
+      new DocCtrl();
+    });
   }
 
   loadApi() {
-    httpServ.chargerVue("api", function () {new ApiCtrl();});
+    httpServ.chargerVue("api", function () {
+      new ApiCtrl();
+    });
   }
 
   loadAbout() {
-    httpServ.chargerVue("about", function () {new AboutCtrl();});
+    httpServ.chargerVue("about", function () {
+      new AboutCtrl();
+    });
   }
-
 }
 
 /*function test(city) {
