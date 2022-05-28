@@ -97,7 +97,3 @@ function lol() {
     console.log($("#abc").html());
     test($("#abc").html());
 }
-
-function reloadPage() {
-    window.location.reload(true);
-}*/
