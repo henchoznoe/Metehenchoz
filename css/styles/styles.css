@@ -8,7 +8,12 @@
 
 html,
 body {
-  background-color: #fff;
+  background-color: #A0AECD;
+}
+
+.navbar {
+  background-color: #A0AECD!important;
+  border-bottom: 1px solid #000000;
 }
 
 body {
