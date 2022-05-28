@@ -1,6 +1,6 @@
-# Metehenchoz
+# Météhenchoz
 
-Projet personnel pour le module 307.
+Projet personnel pour le module 307 à l'EMF.
 
 Site réalisé en HTML, CSS et JavaScript avec en complément une API météo de weatherapi.com
 
