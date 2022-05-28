@@ -8,51 +8,49 @@ $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
   httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
-
-  indexCtrl.chargerIcon();
-
-  $("#a-home").click(function () {
-    indexCtrl.hideNavCollapsed();
-    $("a.nav-link").removeClass("active");
-    indexCtrl.loadHome();
-  });
-  $("#a-stations").click(function () {
-    indexCtrl.hideNavCollapsed();
-    $("a.nav-link").removeClass("active");
-    $("#a-stations").addClass("active");
-    indexCtrl.loadStations();
-  });
-  $("#a-doc").click(function () {
-    indexCtrl.hideNavCollapsed();
-    $("a.nav-link").removeClass("active");
-    $("#a-doc").addClass("active");
-    indexCtrl.loadDoc();
-  });
-  $("#a-api").click(function () {
-    indexCtrl.hideNavCollapsed();
-    $("a.nav-link").removeClass("active");
-    $("#a-api").addClass("active");
-    indexCtrl.loadApi();
-  });
-  $("#a-about").click(function () {
-    indexCtrl.hideNavCollapsed();
-    $("a.nav-link").removeClass("active");
-    $("#a-about").addClass("active");
-    indexCtrl.loadAbout();
-  });
 });
 
 class IndexCtrl {
   constructor() {
+    this.chargerIcon();
     this.loadHome();
     this.loadFooter();
+
+    $("#a-home").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      indexCtrl.loadHome();
+    });
+    $("#a-stations").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-stations").addClass("active");
+      indexCtrl.loadStations();
+    });
+    $("#a-doc").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-doc").addClass("active");
+      indexCtrl.loadDoc();
+    });
+    $("#a-api").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-api").addClass("active");
+      indexCtrl.loadApi();
+    });
+    $("#a-about").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-about").addClass("active");
+      indexCtrl.loadAbout();
+    });
   }
 
   chargerIcon() {
     let date = new Date().getHours();
     if (date > 18 || date < 8) {
       document.getElementById("icon").href = "img/moon.png";
-      
     }
   }
 
