@@ -71,3 +71,8 @@ footer {
     outline: none;
     box-shadow: none;
 }
+
+.station {
+  height: 250px;
+  border: 1px solid black;
+}

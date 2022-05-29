@@ -19,13 +19,14 @@ class IndexCtrl {
     $('#a-home').click(function () {
       indexCtrl.hideNavCollapsed();
       $('a.nav-link').removeClass('active');
+      $('#a-stations').addClass('active');
       indexCtrl.loadHome();
     });
     $('#a-stations').click(function () {
       indexCtrl.hideNavCollapsed();
       $('a.nav-link').removeClass('active');
       $('#a-stations').addClass('active');
-      indexCtrl.loadStations();
+      indexCtrl.loadHome();
     });
     $('#a-doc').click(function () {
       indexCtrl.hideNavCollapsed();
@@ -74,12 +75,6 @@ class IndexCtrl {
   loadFooter() {
     httpServ.chargerFooter('footer', function () {
       new FooterCtrl();
-    });
-  }
-
-  loadStations() {
-    httpServ.chargerVue('stations', function () {
-      new StationsCtrl();
     });
   }
 
