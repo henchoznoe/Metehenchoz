@@ -99,6 +99,7 @@ class IndexCtrl {
       $("#a-about").addClass("active");
       indexCtrl.loadAbout();
     });
+
   }
 
 
