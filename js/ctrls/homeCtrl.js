@@ -7,6 +7,7 @@
 class HomeCtrl {
 
     constructor() {
+
       $("#api-input").keyup(function(event) {
         if($('#api-input').val() != null){
           $.ajax("https://api.weatherapi.com/v1/search.json", {
@@ -22,6 +23,7 @@ class HomeCtrl {
           });
         }
       });
+      
     }
     
 }

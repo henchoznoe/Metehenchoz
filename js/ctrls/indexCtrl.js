@@ -104,7 +104,7 @@ class IndexCtrl {
 
 
 
-  api(city) {
+  /*api(city) {
     $.ajax("https://api.weatherapi.com/v1/current.json", {
       type: "GET",
       contentType: "application/json",
@@ -122,7 +122,7 @@ class IndexCtrl {
 
   find() {
     this.api(document.getElementById('api-input').value);
-  }
+  }*/
 
   
 }
