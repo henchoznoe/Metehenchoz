@@ -11,42 +11,14 @@ $().ready(function () {
 });
 
 class IndexCtrl {
+
   constructor() {
     this.chargerIcon();
     this.loadHome();
     this.loadFooter();
-
-    $("#a-home").click(function () {
-      indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-stations").addClass("active");
-      indexCtrl.loadHome();
-    });
-    $("#a-stations").click(function () {
-      indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-stations").addClass("active");
-      indexCtrl.loadHome();
-    });
-    $("#a-doc").click(function () {
-      indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-doc").addClass("active");
-      indexCtrl.loadDoc();
-    });
-    $("#a-api").click(function () {
-      indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-api").addClass("active");
-      indexCtrl.loadApi();
-    });
-    $("#a-about").click(function () {
-      indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-about").addClass("active");
-      indexCtrl.loadAbout();
-    });
+    this.loadEvents();
   }
+  
 
   chargerIcon() {
     let heure = new Date().getHours();
@@ -96,6 +68,41 @@ class IndexCtrl {
     });
   }
 
+  loadEvents(){
+    $("#a-home").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-stations").addClass("active");
+      indexCtrl.loadHome();
+    });
+    $("#a-stations").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-stations").addClass("active");
+      indexCtrl.loadHome();
+    });
+    $("#a-doc").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-doc").addClass("active");
+      indexCtrl.loadDoc();
+    });
+    $("#a-api").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-api").addClass("active");
+      indexCtrl.loadApi();
+    });
+    $("#a-about").click(function () {
+      indexCtrl.hideNavCollapsed();
+      $("a.nav-link").removeClass("active");
+      $("#a-about").addClass("active");
+      indexCtrl.loadAbout();
+    });
+  }
+
+
+
   api(city) {
     $.ajax("https://api.weatherapi.com/v1/current.json", {
       type: "GET",
@@ -115,4 +122,6 @@ class IndexCtrl {
   find() {
     this.api(document.getElementById('api-input').value);
   }
+
+  
 }
