@@ -7,10 +7,7 @@
 class AboutCtrl {
 
     constructor() {
-     this.showTitle();
+     
     }
-    
-    showTitle() {
-      document.getElementById('title').classList.add('fromLeftTitle');
-    }
+   
 }

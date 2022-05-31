@@ -104,9 +104,14 @@ class IndexCtrl {
       $('#a-about').addClass('active');
       indexCtrl.loadAbout();
     });
-    $('nav-search').keypress(function () {
-      
+    $('#nav-in-search').keypress(function () {
+      console.log($('#nav-in-search').val());
     });
+    $('#nav-btn-search').click(function () {
+      let value = $('#nav-in-search').val();
+      $('#nav-in-search').val('');
+      alert('Recherche de ' + value + ' en cours...');
+    })
 
   }
 

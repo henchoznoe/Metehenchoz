@@ -7,7 +7,6 @@
 class HomeCtrl {
 
     constructor() {
-
       /*$("#api-input").keyup(function(event) {
         if($('#api-input').val() != null){
           if($('#api-input').val().length >= 3 && $('#api-input').val().length <= 10){
