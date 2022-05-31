@@ -8,7 +8,7 @@ class HomeCtrl {
 
     constructor() {
 
-      $("#api-input").keyup(function(event) {
+      /*$("#api-input").keyup(function(event) {
         if($('#api-input').val() != null){
           if($('#api-input').val().length >= 3 && $('#api-input').val().length <= 10){
           $.ajax("https://api.weatherapi.com/v1/search.json", {
@@ -25,7 +25,7 @@ class HomeCtrl {
           });
         }
       }
-      });
+      });*/
 
     }
     

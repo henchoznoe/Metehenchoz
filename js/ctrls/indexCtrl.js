@@ -23,7 +23,7 @@ class IndexCtrl {
   chargerIcon() {
     let heure = new Date().getHours();
     if (heure > 8 && heure < 20) {
-      document.getElementById("icon").href = "img/sun.jpg";
+      document.getElementById('icon').href = 'img/sun.jpg';
     }
   }
 
@@ -32,72 +32,80 @@ class IndexCtrl {
   }
 
   hideNavCollapsed() {
-    let nav = document.getElementById("navbarResponsive");
-    if (nav.className.includes("show")) {
-      nav.classList.remove("show");
+    let nav = document.getElementById('navbarResponsive');
+    if (nav.className.includes('show')) {
+      nav.classList.remove('show');
     }
   }
 
   loadHome() {
-    httpServ.chargerVue("home", function () {
+    httpServ.chargerVue('home', function () {
       new HomeCtrl();
     });
   }
 
+  loadStations() {
+    httpServ.chargerVue('stations', function () {
+      new StationsCtrl();
+    });
+  }
+
   loadFooter() {
-    httpServ.chargerFooter("footer", function () {
+    httpServ.chargerFooter('footer', function () {
       new FooterCtrl();
     });
   }
 
   loadDoc() {
-    httpServ.chargerVue("doc", function () {
+    httpServ.chargerVue('doc', function () {
       new DocCtrl();
     });
   }
 
   loadApi() {
-    httpServ.chargerVue("api", function () {
+    httpServ.chargerVue('api', function () {
       new ApiCtrl();
     });
   }
 
   loadAbout() {
-    httpServ.chargerVue("about", function () {
+    httpServ.chargerVue('about', function () {
       new AboutCtrl();
     });
   }
 
   loadEvents(){
-    $("#a-home").click(function () {
+    $('#a-home').click(function () {
       indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-stations").addClass("active");
+      $('a.nav-link').removeClass('active');
       indexCtrl.loadHome();
     });
-    $("#a-stations").click(function () {
+    $('#a-stations').click(function () {
       indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-stations").addClass("active");
-      indexCtrl.loadHome();
+      $('a.nav-link').removeClass('active');
+      $('#a-stations').addClass('active');
+      indexCtrl.loadStations();
     });
-    $("#a-doc").click(function () {
+    $('#a-doc').click(function () {
       indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-doc").addClass("active");
+      $('a.nav-link').removeClass('active');
+      $('#a-doc').addClass('active');
       indexCtrl.loadDoc();
     });
-    $("#a-api").click(function () {
+    $('#a-api').click(function () {
       indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-api").addClass("active");
+      $('a.nav-link').removeClass('active');
+      $('#a-api').addClass('active');
       indexCtrl.loadApi();
     });
-    $("#a-about").click(function () {
+    $('#a-about').click(function () {
       indexCtrl.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-about").addClass("active");
+      $('a.nav-link').removeClass('active');
+      $('#a-about').addClass('active');
       indexCtrl.loadAbout();
+    });
+    $('nav-search').keypress(function () {
+      
     });
 
   }
@@ -105,17 +113,17 @@ class IndexCtrl {
 
 
   api(city) {
-    $.ajax("https://api.weatherapi.com/v1/current.json", {
-      type: "GET",
-      contentType: "application/json",
+    $.ajax('https://api.weatherapi.com/v1/current.json', {
+      type: 'GET',
+      contentType: 'application/json',
       data: {
-        key: "b301c07a26014a9cbb355734222505",
+        key: 'b301c07a26014a9cbb355734222505',
         q: city,
-        aqi: "no",
+        aqi: 'no',
       },
       success: function (data) {
-        document.getElementById("api-text").innerHTML = data.location.country;
-        document.getElementById("api-text").innerHTML += ' / ' + data.location.region;
+        document.getElementById('api-text').innerHTML = data.location.country;
+        document.getElementById('api-text').innerHTML += ' / ' + data.location.region;
       },
     });
   }

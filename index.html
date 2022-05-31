@@ -29,6 +29,7 @@
     <script src="js/ctrls/indexCtrl.js"></script>
     <script src="js/ctrls/httpServ.js"></script>
     <script src="js/ctrls/homeCtrl.js"></script>
+    <script src="js/ctrls/StationsCtrl.js"></script>
     <script src="js/ctrls/footerCtrl.js"></script>
     <script src="js/ctrls/docCtrl.js"></script>
     <script src="js/ctrls/apiCtrl.js"></script>
@@ -36,7 +37,7 @@
     <!-- Icons 6.1.1 from https://fontawesome.com/ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -55,7 +56,7 @@
                 <!-- Menus -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" id="a-stations">Stations</a>
+                        <a class="nav-link" id="a-stations">Stations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="a-doc">Documentation</a>
@@ -69,9 +70,9 @@
                 </ul>
                 <!-- Search -->
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Rechercher une ville"
+                    <input class="form-control me-2" id="nav-in-search" placeholder="Rechercher une ville"
                         aria-label="Rechercher une ville">
-                    <button class="btn btn-outline-dark btnSearch" type="submit">Rechercher</button>
+                    <button class="btn btn-outline-dark btnSearch" type="button" id="nav-btn-search">Rechercher</button>
                 </form>
             </div>
             <!-- End List of menus -->
