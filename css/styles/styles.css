@@ -9,6 +9,11 @@ body {
   background-color: #fff;
 }
 
+@font-face {
+  font-family: Noto;
+  src: url('../../fonts/NotoSans-Black.ttf');
+}
+
 .navbar {
   background-color: #fac05e !important;
   border-bottom: 1px solid #000000;
@@ -16,7 +21,6 @@ body {
 
 body {
   margin-bottom: 150px;
-  background-color: rgb(191, 149, 247);
 }
 
 footer {
@@ -75,4 +79,8 @@ footer {
 .station {
   height: 250px;
   border: 1px solid black;
+}
+
+.title-view {
+  font-weight: bold;
 }
