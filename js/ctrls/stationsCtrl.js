@@ -1,7 +1,7 @@
 /*
-  But     : api's ctrl
-  Auteur  : Noé Henchoz 300221
-  Date    : 26.05.2022 / v1.0 
+  But     : stations's ctrl
+  Auteur  : Noé Henchoz
+  Date    : 31.05.2022 / v1.0 
 */
 
 class StationsCtrl {

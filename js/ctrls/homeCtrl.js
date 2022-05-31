@@ -1,6 +1,6 @@
 /*
   But     : home's ctrl
-  Auteur  : Noé Henchoz 300221
+  Auteur  : Noé Henchoz
   Date    : 26.05.2022 / v1.0 
 */
 
