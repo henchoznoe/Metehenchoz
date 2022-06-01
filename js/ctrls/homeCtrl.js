@@ -8,8 +8,8 @@ class HomeCtrl {
 
     constructor() {
       this.weatherNewYork();
-      this.weatherLondon();
       this.weatherParis();
+      this.weatherLondon();
     }
 
     weatherNewYork() {
@@ -24,10 +24,10 @@ class HomeCtrl {
       });
     }
 
-    weatherLondon() {
+    weatherParis() {
       let info = document.getElementById('desc-city2');
       let icon = document.getElementById('icon2');
-      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=London")
+      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=Paris")
       .then((reponse) => reponse.json())
       .then((result) => {
         let temp = Math.round(result.current.temp_c);
@@ -36,10 +36,10 @@ class HomeCtrl {
       });
     }
 
-    weatherParis() {
+    weatherLondon() {
       let info = document.getElementById('desc-city3');
       let icon = document.getElementById('icon3');
-      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=Paris")
+      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=London")
       .then((reponse) => reponse.json())
       .then((result) => {
         let temp = Math.round(result.current.temp_c);

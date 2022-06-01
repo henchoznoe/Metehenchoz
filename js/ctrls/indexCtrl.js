@@ -11,6 +11,7 @@ $().ready(function () {
 });
 
 class IndexCtrl {
+  
   constructor() {
     this.chargerIcon();
     this.loadHome();
@@ -92,12 +93,16 @@ class IndexCtrl {
         this.weatherSearched(cityEntered);
       }
     });
-    $("#nav-in-search").keypress(function (event) {
+    $("#nav-in-search").keypress((event) => {
       let keycode = event.keyCode ? event.keyCode : event.which;
       if (keycode == "13") {
+        event.preventDefault();
         let cityEntered = $("#nav-in-search").val();
-        this.weatherSearched(cityEntered);
+        if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+          this.weatherSearched(cityEntered);
+        }
       }
     });
+ 
   }
 }
