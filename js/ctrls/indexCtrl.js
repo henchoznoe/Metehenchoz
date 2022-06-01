@@ -62,54 +62,34 @@ class IndexCtrl {
   }
 
   loadEvents() {
-    $("#a-home").click(function () {
-      indexCtrl.hideNavCollapsed();
+    $("#a-home").click( () => {
+      this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
-      indexCtrl.loadHome();
+      this.loadHome();
     });
-    $("#a-stations").click(function () {
-      indexCtrl.hideNavCollapsed();
+    $("#a-stations").click( () => {
+      this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
       $("#a-stations").addClass("active");
-      indexCtrl.loadStations();
+      this.loadStations();
     });
-    $("#a-about").click(function () {
-      indexCtrl.hideNavCollapsed();
+    $("#a-about").click( () => {
+      this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
       $("#a-about").addClass("active");
-      indexCtrl.loadAbout();
-    });
-    $("#nav-in-search").keypress(function () {
-      console.log($("#nav-in-search").val());
+      this.loadAbout();
     });
     $("#nav-btn-search").click( () => {
-      let value = $("#nav-in-search").val();
-      /*$("#nav-in-search").val("");
-      alert("Recherche de " + value + " en cours...");*/
-      this.api(value);
+      let citySearched = $("#nav-in-search").val();
+      this.api(citySearched);
     });
   }
 
-  api(city) {
-    fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + city)
+  api(citySearched) {
+    fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + citySearched)
       .then((reponse) => reponse.json())
       .then((result) => {
         console.log(result);
       });
   }
 }
-
-/*$.ajax("https://api.weatherapi.com/v1/current.json", {
-      type: "GET",
-      contentType: "application/json",
-      data: {
-        key: "b301c07a26014a9cbb355734222505",
-        q: city,
-        aqi: "no",
-      },
-      success: function (data) {
-        document.getElementById("text").innerHTML = data.location.country;
-        document.getElementById("text").innerHTML +=
-          " / " + data.location.region;
-      },
-    });*/
