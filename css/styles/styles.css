@@ -43,8 +43,6 @@ body {
   font-family: Marker;
 }
 
-.title-view-anime:hover {animation: fromLeftWithBlur 1s;}
-
 /* footer */
 footer {
   width: 100%;
@@ -85,7 +83,6 @@ footer {
 .weather-home {
   height: 310px;
   border: 1px solid black;    
-  position: relative;
   border-radius: 15px;
 }
 
@@ -111,15 +108,27 @@ footer {
 
 .icon {height: 96px;width: 96px;}
 
-.title-city {font-weight: 500;}
+.title-city, .subtitle {font-weight: 500;}
 
 .div-temperature-city {
   position: absolute;
-  bottom: 0;
 }
 
 .temperature-city {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 20px;
+}
+
+.text-home {font-size: large;}
+
+.link-stations-text-home {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.link-stations-text-home:hover {
+  color: black;
+  transition: color 0.3s ease-in-out;
 }
