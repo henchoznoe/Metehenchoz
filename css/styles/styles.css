@@ -120,15 +120,15 @@ footer {
   border-radius: 20px;
 }
 
-.text-home {font-size: large;}
+.text-home {font-size: x-large;}
 
-.link-stations-text-home {
+.link {
   cursor: pointer;
   color: white;
   transition: color 0.3s ease-in-out;
 }
 
-.link-stations-text-home:hover {
+.link:hover {
   color: black;
   transition: color 0.3s ease-in-out;
 }
