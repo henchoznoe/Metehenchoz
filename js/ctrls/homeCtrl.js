@@ -7,25 +7,15 @@
 class HomeCtrl {
 
     constructor() {
-      /*$("#api-input").keyup(function(event) {
-        if($('#api-input').val() != null){
-          if($('#api-input').val().length >= 3 && $('#api-input').val().length <= 10){
-          $.ajax("https://api.weatherapi.com/v1/search.json", {
-            type: "GET",
-            contentType: "application/json",
-            data: {
-              key: "b301c07a26014a9cbb355734222505",
-              q: $('#api-input').val(),
-              lang: "fr"
-            },
-            success: function (data) {
-              console.log(data);
-            }
-          });
-        }
-      }
-      });*/
+      this.weatherNewYork();
+    }
 
+    weatherNewYork() {
+      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=New York")
+      .then((reponse) => reponse.json())
+      .then((result) => {
+        console.log(result);
+      });
     }
     
 }

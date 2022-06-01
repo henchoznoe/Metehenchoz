@@ -11,6 +11,7 @@ $().ready(function () {
 });
 
 class IndexCtrl {
+  
   constructor() {
     this.chargerIcon();
     this.loadHome();
@@ -81,16 +82,16 @@ class IndexCtrl {
     $("#nav-in-search").keypress(function () {
       console.log($("#nav-in-search").val());
     });
-    $("#nav-btn-search").click(function () {
+    $("#nav-btn-search").click( () => {
       let value = $("#nav-in-search").val();
       /*$("#nav-in-search").val("");
       alert("Recherche de " + value + " en cours...");*/
-      indexCtrl.api(value);
+      this.api(value);
     });
   }
 
   api(city) {
-    fetch("https://api.weatherapi.com/v1/current.json?key=b301c07a26014a9cbb355734222505&q=" + city)
+    fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + city)
       .then((reponse) => reponse.json())
       .then((result) => {
         console.log(result);

@@ -90,8 +90,8 @@ footer {
   border: 1px solid white;
 }
 
-.weather-1 {
+/*.weather-1 {
   background-image: url('https://cdn.pixabay.com/photo/2020/02/16/20/29/nyc-4854718_960_720.jpg');
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
-}
+}*/
