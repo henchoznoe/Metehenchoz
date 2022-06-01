@@ -18,7 +18,6 @@ class HomeCtrl {
       fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=New York")
       .then((reponse) => reponse.json())
       .then((result) => {
-        console.log(result);
         let temp = Math.round(result.current.temp_c);
         info.innerHTML = temp + "°C";
         icon.src = result.current.condition.icon;
@@ -31,7 +30,6 @@ class HomeCtrl {
       fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=London")
       .then((reponse) => reponse.json())
       .then((result) => {
-        // console.log(result);
         let temp = Math.round(result.current.temp_c);
         info.innerHTML = temp + "°C";
         icon.src = result.current.condition.icon;
@@ -44,7 +42,6 @@ class HomeCtrl {
       fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=Paris")
       .then((reponse) => reponse.json())
       .then((result) => {
-        // console.log(result);
         let temp = Math.round(result.current.temp_c);
         info.innerHTML = temp + "°C";
         icon.src = result.current.condition.icon;

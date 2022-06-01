@@ -11,7 +11,6 @@ $().ready(function () {
 });
 
 class IndexCtrl {
-  
   constructor() {
     this.chargerIcon();
     this.loadHome();
@@ -61,35 +60,44 @@ class IndexCtrl {
     });
   }
 
+  weatherSearched(cityEntered) {
+    fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + cityEntered)
+      .then((reponse) => reponse.json())
+      .then((result) => {
+        console.log(result);
+      });
+  }
+
   loadEvents() {
-    $("#a-home").click( () => {
+    $("#a-home").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
       this.loadHome();
     });
-    $("#a-stations").click( () => {
+    $("#a-stations").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
       $("#a-stations").addClass("active");
       this.loadStations();
     });
-    $("#a-about").click( () => {
+    $("#a-about").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
       $("#a-about").addClass("active");
       this.loadAbout();
     });
-    $("#nav-btn-search").click( () => {
-      let citySearched = $("#nav-in-search").val();
-      this.api(citySearched);
+    $("#nav-btn-search").click(() => {
+      let cityEntered = $("#nav-in-search").val();
+      if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+        this.weatherSearched(cityEntered);
+      }
     });
-  }
-
-  api(citySearched) {
-    fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + citySearched)
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        console.log(result);
-      });
+    $("#nav-in-search").keypress(function (event) {
+      let keycode = event.keyCode ? event.keyCode : event.which;
+      if (keycode == "13") {
+        let cityEntered = $("#nav-in-search").val();
+        this.weatherSearched(cityEntered);
+      }
+    });
   }
 }
