@@ -13,7 +13,7 @@ class HomeCtrl {
     }
 
     weatherNewYork() {
-      let info = document.getElementById('desc-city1');
+      let info = document.getElementById('temp-city1');
       let icon = document.getElementById('icon1');
       fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=New York")
       .then((reponse) => reponse.json())
@@ -25,7 +25,7 @@ class HomeCtrl {
     }
 
     weatherParis() {
-      let info = document.getElementById('desc-city2');
+      let info = document.getElementById('temp-city2');
       let icon = document.getElementById('icon2');
       fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=Paris")
       .then((reponse) => reponse.json())
@@ -37,7 +37,7 @@ class HomeCtrl {
     }
 
     weatherLondon() {
-      let info = document.getElementById('desc-city3');
+      let info = document.getElementById('temp-city3');
       let icon = document.getElementById('icon3');
       fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=London")
       .then((reponse) => reponse.json())

@@ -88,6 +88,7 @@ footer {
 .weather-home {
   height: 310px;
   border: 1px solid white;    
+  position: relative;
 }
 
 .weather-title-icon {
@@ -110,11 +111,16 @@ footer {
   background-size: cover;
 }
 
-.icon {
-  height: 96px;
-  width: 96px;
+.icon {height: 96px;width: 96px;}
+
+.title-city {font-weight: 500;}
+
+.div-temperature-city {
+  position: absolute;
+  bottom: 0;
 }
 
-.title-city {
-  font-weight: bold;
+.temperature-city {
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
 }
