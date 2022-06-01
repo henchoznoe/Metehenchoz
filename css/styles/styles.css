@@ -43,9 +43,7 @@ body {
   font-family: Marker;
 }
 
-.title-view-anime:hover {
-  animation: fromLeftWithBlur 1s;
-}
+.title-view-anime:hover {animation: fromLeftWithBlur 1s;}
 
 /* footer */
 footer {
