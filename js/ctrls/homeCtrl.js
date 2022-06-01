@@ -47,5 +47,5 @@ class HomeCtrl {
         icon.src = result.current.condition.icon;
       });
     }
-    
+
 }

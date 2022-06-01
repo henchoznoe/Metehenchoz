@@ -86,12 +86,35 @@ footer {
 }
 
 .weather-home {
-  height: 200px;
-  border: 1px solid white;
+  height: 310px;
+  border: 1px solid white;    
 }
 
-/*.weather-1 {
-  background-image: url('https://cdn.pixabay.com/photo/2020/02/16/20/29/nyc-4854718_960_720.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}*/
+.weather-title-icon {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.weather-1 {
+  background-image: url("../../img/newyork.jpg");
+  background-size: cover;
+}
+
+.weather-2 {
+  background-image: url("../../img/paris.jpg");
+  background-size: cover;
+}
+
+.weather-3 {
+  background-image: url("../../img/london.jpg");
+  background-size: cover;
+}
+
+.icon {
+  height: 96px;
+  width: 96px;
+}
+
+.title-city {
+  font-weight: bold;
+}
