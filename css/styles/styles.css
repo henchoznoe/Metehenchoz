@@ -4,10 +4,7 @@
   Date    : 25.05.2022 / v1.0 
 */
 
-html,
-body {
-  background-color: #fff;
-}
+html{background-color: #fff;}
 
 body {
   margin-bottom: 150px;
@@ -15,7 +12,6 @@ body {
 }
 
 /* Imports fonts */
-@font-face {font-family: Noto;src: url('../../fonts/NotoSans-Black.ttf');}
 @font-face {font-family: Marker;src: url('../../fonts/PermanentMarker-Regular.ttf');}
 
 /* Navbar */

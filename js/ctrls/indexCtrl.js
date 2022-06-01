@@ -56,18 +56,6 @@ class IndexCtrl {
     });
   }
 
-  loadDoc() {
-    httpServ.chargerVue('doc', function () {
-      new DocCtrl();
-    });
-  }
-
-  loadApi() {
-    httpServ.chargerVue('api', function () {
-      new ApiCtrl();
-    });
-  }
-
   loadAbout() {
     httpServ.chargerVue('about', function () {
       new AboutCtrl();
@@ -85,18 +73,6 @@ class IndexCtrl {
       $('a.nav-link').removeClass('active');
       $('#a-stations').addClass('active');
       indexCtrl.loadStations();
-    });
-    $('#a-doc').click(function () {
-      indexCtrl.hideNavCollapsed();
-      $('a.nav-link').removeClass('active');
-      $('#a-doc').addClass('active');
-      indexCtrl.loadDoc();
-    });
-    $('#a-api').click(function () {
-      indexCtrl.hideNavCollapsed();
-      $('a.nav-link').removeClass('active');
-      $('#a-api').addClass('active');
-      indexCtrl.loadApi();
     });
     $('#a-about').click(function () {
       indexCtrl.hideNavCollapsed();
