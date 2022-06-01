@@ -23,6 +23,12 @@ class HomeCtrl {
         info.innerHTML = temp + "°C";
         icon.src = result.current.condition.icon;
       });
+      fetch('https://worldtimeapi.org/api/timezone/America/New_York')
+      .then((reponse) => reponse.json())
+      .then((result) => {
+        let hour = result.datetime.substring(16,11);
+        info.innerHTML += " / " + hour;
+      });
     }
 
     weatherParis() {
@@ -35,6 +41,12 @@ class HomeCtrl {
         info.innerHTML = temp + "°C";
         icon.src = result.current.condition.icon;
       });
+      fetch('https://worldtimeapi.org/api/timezone/Europe/Paris')
+      .then((reponse) => reponse.json())
+      .then((result) => {
+        let hour = result.datetime.substring(16,11);
+        info.innerHTML += " / " + hour;
+      });
     }
 
     weatherLondon() {
@@ -46,6 +58,12 @@ class HomeCtrl {
         let temp = Math.round(result.current.temp_c);
         info.innerHTML = temp + "°C";
         icon.src = result.current.condition.icon;
+      });
+      fetch('https://worldtimeapi.org/api/timezone/Europe/London')
+      .then((reponse) => reponse.json())
+      .then((result) => {
+        let hour = result.datetime.substring(16,11);
+        info.innerHTML += " / " + hour;
       });
     }
 
