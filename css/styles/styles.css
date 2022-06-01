@@ -84,3 +84,14 @@ footer {
     transform: translateX(0px);
   }
 }
+
+.weather-home {
+  height: 200px;
+  border: 1px solid white;
+}
+
+.weather-1 {
+  background-image: url('https://cdn.pixabay.com/photo/2020/02/16/20/29/nyc-4854718_960_720.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

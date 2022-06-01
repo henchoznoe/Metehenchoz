@@ -83,13 +83,22 @@ class IndexCtrl {
     });
     $("#nav-btn-search").click(function () {
       let value = $("#nav-in-search").val();
-      $("#nav-in-search").val("");
-      alert("Recherche de " + value + " en cours...");
+      /*$("#nav-in-search").val("");
+      alert("Recherche de " + value + " en cours...");*/
+      indexCtrl.api(value);
     });
   }
 
   api(city) {
-    $.ajax("https://api.weatherapi.com/v1/current.json", {
+    fetch("https://api.weatherapi.com/v1/current.json?key=b301c07a26014a9cbb355734222505&q=" + city)
+      .then((reponse) => reponse.json())
+      .then((result) => {
+        console.log(result);
+      });
+  }
+}
+
+/*$.ajax("https://api.weatherapi.com/v1/current.json", {
       type: "GET",
       contentType: "application/json",
       data: {
@@ -98,14 +107,8 @@ class IndexCtrl {
         aqi: "no",
       },
       success: function (data) {
-        document.getElementById("api-text").innerHTML = data.location.country;
-        document.getElementById("api-text").innerHTML +=
+        document.getElementById("text").innerHTML = data.location.country;
+        document.getElementById("text").innerHTML +=
           " / " + data.location.region;
       },
-    });
-  }
-
-  find() {
-    this.api(document.getElementById("api-input").value);
-  }
-}
+    });*/
