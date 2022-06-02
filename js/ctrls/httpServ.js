@@ -5,7 +5,6 @@
 */
 
 class HttpServ {
-  
   constructor() {}
 
   centraliserErreurHttp(httpErrorCallbackFn) {
@@ -44,15 +43,16 @@ class HttpServ {
     });
   }
 
-  getWeather(city,  successCallBack) {
-
-    fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=" + city)
-      .then((response) => response.json())
-      .then((result) => {
-        successCallBack(result);
-      });
-
+  getWeather(city, successCallBack) {
+    $.ajax({
+      url: "https://api.weatherapi.com/v1/current.json",
+      type: "GET",
+      contentType: "application/json",
+      data: {
+        key: API_KEY,
+        q: city,
+      },
+      success: successCallBack,
+    });
   }
-
-
 }

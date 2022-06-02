@@ -24,20 +24,20 @@ class HomeCtrl {
   }
 
   weatherParis() {
-    httpServ.getWeather('Paris', (data) => {
-      let temp = Math.round(data.current.temp_c);
+    httpServ.getWeather('Paris', (json) => {
+      let temp = Math.round(json.current.temp_c);
       let time = new Date().toLocaleString("fr-fr", {timeZone: "Europe/Paris"});
       $('#temp-city2').html(temp + '°C' + ' / ' + time.substring(17, 12));
-      $('#icon2').attr('src', data.current.condition.icon);
+      $('#icon2').attr('src', json.current.condition.icon);
     });
   }
 
   weatherLondon() {
-    httpServ.getWeather('London', (data) => {
-      let temp = Math.round(data.current.temp_c);
+    httpServ.getWeather('London', (json) => {
+      let temp = Math.round(json.current.temp_c);
       let time = new Date().toLocaleString("fr-fr", {timeZone: "Europe/London"});
       $('#temp-city3').html(temp + '°C' +  ' / ' + time.substring(17, 12));
-      $('#icon3').attr('src', data.current.condition.icon);
+      $('#icon3').attr('src', json.current.condition.icon);
     });
   }
 

@@ -69,6 +69,7 @@ class IndexCtrl {
   }
 
   loadEvents() {
+
     $("#a-home").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
@@ -108,4 +109,5 @@ class IndexCtrl {
     });
  
   }
+
 }
