@@ -62,10 +62,9 @@ class IndexCtrl {
   }
 
   weatherSearched(cityEntered) {
-    fetch("https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q=" + cityEntered)
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        console.log(result);
+      httpServ.getWeather(cityEntered, (json) => {
+        let temp = Math.round(json.current.temp_c);
+        console.log(temp);
       });
   }
 

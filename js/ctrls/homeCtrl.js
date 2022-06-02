@@ -6,71 +6,40 @@
 
 class HomeCtrl {
 
-    constructor() {
-      this.weatherNewYork();
-      this.weatherParis();
-      this.weatherLondon();
-      this.events();
-    }
+  constructor() {
+    this.events();
+    this.weatherNewYork();
+    this.weatherParis();
+    this.weatherLondon();
+  }
 
-    weatherNewYork() {
-      let info = document.getElementById('temp-city1');
-      let icon = document.getElementById('icon1');
-      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=New York")
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        let temp = Math.round(result.current.temp_c);
-        info.innerHTML = temp + "°C";
-        icon.src = result.current.condition.icon;
-      });
-      fetch('https://worldtimeapi.org/api/timezone/America/New_York')
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        let hour = result.datetime.substring(16,11);
-        info.innerHTML += " / " + hour;
-      });
-    }
+  weatherNewYork() {
+    httpServ.getWeather('New York', (json) => {
+      let temp = Math.round(json.current.temp_c);
+      $('#temp-city1').html(temp + '°C');
+      $('#icon1').attr('src', json.current.condition.icon);
+    });
+  }
 
-    weatherParis() {
-      let info = document.getElementById('temp-city2');
-      let icon = document.getElementById('icon2');
-      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=Paris")
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        let temp = Math.round(result.current.temp_c);
-        info.innerHTML = temp + "°C";
-        icon.src = result.current.condition.icon;
-      });
-      fetch('https://worldtimeapi.org/api/timezone/Europe/Paris')
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        let hour = result.datetime.substring(16,11);
-        info.innerHTML += " / " + hour;
-      });
-    }
+  weatherParis() {
+    httpServ.getWeather('Paris', (data) => {
+      let temp = Math.round(data.current.temp_c);
+      $('#temp-city2').html(temp + '°C');
+      $('#icon2').attr('src', data.current.condition.icon);
+    });
+  }
 
-    weatherLondon() {
-      let info = document.getElementById('temp-city3');
-      let icon = document.getElementById('icon3');
-      fetch("https://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=London")
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        let temp = Math.round(result.current.temp_c);
-        info.innerHTML = temp + "°C";
-        icon.src = result.current.condition.icon;
-      });
-      fetch('https://worldtimeapi.org/api/timezone/Europe/London')
-      .then((reponse) => reponse.json())
-      .then((result) => {
-        let hour = result.datetime.substring(16,11);
-        info.innerHTML += " / " + hour;
-      });
-    }
+  weatherLondon() {
+    httpServ.getWeather('London', (data) => {
+      let temp = Math.round(data.current.temp_c);
+      $('#temp-city3').html(temp + '°C');
+      $('#icon3').attr('src', data.current.condition.icon);
+    });
+  }
 
-    events() {
-      $('#link-stations-text-home').click( () => {
-        indexCtrl.loadStations();
-      });
-    }
-
+  events() {
+    $('#link-stations-text-home').click(() => {
+      indexCtrl.loadStations();
+    });
+  }
 }
