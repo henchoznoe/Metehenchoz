@@ -14,16 +14,12 @@ class HttpServ {
         let msg;
         if (xhr.status === 0) {
           msg = "Pas d'accès à la ressource serveur demandée !";
-        } else if (xhr.status === 404) {
-          msg = "Page demandée non trouvée [404] !";
-        } else if (xhr.status === 500) {
-          msg = "Erreur interne sur le serveur [500] !";
-        } else if (exception === "parsererror") {
-          msg = "Erreur de parcours dans le JSON !";
-        } else if (exception === "timeout") {
-          msg = "Erreur de délai dépassé [Time out] !";
-        } else if (exception === "abort") {
-          msg = "Requête Ajax stoppée !";
+        } else if (xhr.status === 401) {
+          msg = "La clé API n'est pas fournie ou est invalide !";
+        } else if (xhr.status === 400) {
+          msg = "Erreur dans la l'URL fournie";
+        } else if (exception === "403") {
+          msg = "Le nombre de call par mois a été dépassé !";
         } else {
           msg = "Erreur inconnue : \n" + xhr.responseText;
         }
@@ -57,5 +53,6 @@ class HttpServ {
       });
 
   }
+
 
 }

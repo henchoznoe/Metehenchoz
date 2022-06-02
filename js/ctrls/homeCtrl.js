@@ -16,15 +16,18 @@ class HomeCtrl {
   weatherNewYork() {
     httpServ.getWeather('New York', (json) => {
       let temp = Math.round(json.current.temp_c);
-      $('#temp-city1').html(temp + '°C');
+      let time = new Date().toLocaleString("fr-fr", {timeZone: "America/New_York"});
+      $('#temp-city1').html(temp + '°C' + ' / ' + time.substring(17, 12));
       $('#icon1').attr('src', json.current.condition.icon);
     });
+    
   }
 
   weatherParis() {
     httpServ.getWeather('Paris', (data) => {
       let temp = Math.round(data.current.temp_c);
-      $('#temp-city2').html(temp + '°C');
+      let time = new Date().toLocaleString("fr-fr", {timeZone: "Europe/Paris"});
+      $('#temp-city2').html(temp + '°C' + ' / ' + time.substring(17, 12));
       $('#icon2').attr('src', data.current.condition.icon);
     });
   }
@@ -32,7 +35,8 @@ class HomeCtrl {
   weatherLondon() {
     httpServ.getWeather('London', (data) => {
       let temp = Math.round(data.current.temp_c);
-      $('#temp-city3').html(temp + '°C');
+      let time = new Date().toLocaleString("fr-fr", {timeZone: "Europe/London"});
+      $('#temp-city3').html(temp + '°C' +  ' / ' + time.substring(17, 12));
       $('#icon3').attr('src', data.current.condition.icon);
     });
   }
