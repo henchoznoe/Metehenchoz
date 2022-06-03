@@ -90,6 +90,7 @@ class IndexCtrl {
     $("#nav-btn-search").click(() => {
       let cityEntered = $("#nav-in-search").val();
       if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+        this.loadStations();
         this.weatherSearched(cityEntered);
       } else {
         console.log('Invalid characters entered : ' + cityEntered);
@@ -101,6 +102,7 @@ class IndexCtrl {
         event.preventDefault();
         let cityEntered = $("#nav-in-search").val();
         if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+          this.loadStations();
           this.weatherSearched(cityEntered);
         } else {
           console.log('Invalid characters entered : ' + cityEntered);
