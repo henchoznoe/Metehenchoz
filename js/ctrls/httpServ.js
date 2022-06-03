@@ -7,7 +7,7 @@
 class HttpServ {
   constructor() {}
 
-  centraliserErreurHttp(httpErrorCallbackFn) {
+  httpErrors(httpErrorCallbackFn) {
     $.ajaxSetup({
       error: function (xhr, exception) {
         let msg;
@@ -27,7 +27,7 @@ class HttpServ {
     });
   }
 
-  chargerVue(vue, callback) {
+  loadView(vue, callback) {
     $("#views").load("views/" + vue + ".html", function () {
       if (typeof callback !== "undefined") {
         callback();
@@ -35,7 +35,7 @@ class HttpServ {
     });
   }
 
-  chargerFooter(vue, callback) {
+  loadFooter(vue, callback) {
     $("#footer").load("views/" + vue + ".html", function () {
       if (typeof callback !== "undefined") {
         callback();

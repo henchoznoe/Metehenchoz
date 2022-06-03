@@ -7,19 +7,18 @@
 $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
-  httpServ.centraliserErreurHttp(indexCtrl.afficherErreurHttp);
+  httpServ.httpErrors(indexCtrl.afficherErreurHttp);
 });
 
 class IndexCtrl {
-  
   constructor() {
-    this.chargerIcon();
+    this.loadIcon();
     this.loadHome();
     this.loadFooter();
     this.loadEvents();
   }
 
-  chargerIcon() {
+  loadIcon() {
     let heure = new Date().getHours();
     if (heure > 8 && heure < 20) {
       document.getElementById("icon").href = "img/sun.jpg";
@@ -38,38 +37,29 @@ class IndexCtrl {
   }
 
   loadHome() {
-    httpServ.chargerVue("home", function () {
-      new HomeCtrl();
-    });
+    httpServ.loadView("home", () => new HomeCtrl());
   }
 
   loadStations() {
-    httpServ.chargerVue("stations", function () {
-      new StationsCtrl();
-    });
+    httpServ.loadView("stations", () => new StationsCtrl());
   }
 
   loadFooter() {
-    httpServ.chargerFooter("footer", function () {
-      new FooterCtrl();
-    });
+    httpServ.loadFooter("footer", () => new FooterCtrl());
   }
 
   loadAbout() {
-    httpServ.chargerVue("about", function () {
-      new AboutCtrl();
-    });
+    httpServ.loadView("about", () => new AboutCtrl());
   }
 
   weatherSearched(cityEntered) {
-      httpServ.getWeather(cityEntered, (json) => {
-        let temp = Math.round(json.current.temp_c);
-        console.log(temp);
-      });
+    httpServ.getWeather(cityEntered, (json) => {
+      let temp = Math.round(json.current.temp_c);
+      console.log(temp);
+    });
   }
 
   loadEvents() {
-
     $("#a-home").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
@@ -93,7 +83,7 @@ class IndexCtrl {
         this.loadStations();
         this.weatherSearched(cityEntered);
       } else {
-        console.log('Invalid characters entered : ' + cityEntered);
+        console.log("Invalid characters entered : " + cityEntered);
       }
     });
     $("#nav-in-search").keypress((event) => {
@@ -105,11 +95,9 @@ class IndexCtrl {
           this.loadStations();
           this.weatherSearched(cityEntered);
         } else {
-          console.log('Invalid characters entered : ' + cityEntered);
+          console.log("Invalid characters entered : " + cityEntered);
         }
       }
     });
- 
   }
-
 }
