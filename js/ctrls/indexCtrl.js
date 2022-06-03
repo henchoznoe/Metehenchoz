@@ -7,10 +7,11 @@
 $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
-  httpServ.httpErrors(indexCtrl.afficherErreurHttp);
+  httpServ.httpErrors(indexCtrl.showHttpErrors);
 });
 
 class IndexCtrl {
+
   constructor() {
     this.loadIcon();
     this.loadHome();
@@ -18,17 +19,20 @@ class IndexCtrl {
     this.loadEvents();
   }
 
+  // load Icon of the website
   loadIcon() {
     let heure = new Date().getHours();
     if (heure > 8 && heure < 20) {
       document.getElementById("icon").href = "img/sun.jpg";
     }
   }
-
-  afficherErreurHttp(msg) {
+  
+  // show http errors
+  showHttpErrors(msg) {
     alert(msg);
   }
 
+  // Close navbar collapse ( to have better experience on mobile phone )
   hideNavCollapsed() {
     let nav = document.getElementById("navbarResponsive");
     if (nav.className.includes("show")) {
@@ -36,29 +40,28 @@ class IndexCtrl {
     }
   }
 
+  // Load views
   loadHome() {
     httpServ.loadView("home", () => new HomeCtrl());
   }
-
   loadStations() {
     httpServ.loadView("stations", () => new StationsCtrl());
   }
-
   loadFooter() {
     httpServ.loadFooter("footer", () => new FooterCtrl());
   }
-
   loadAbout() {
     httpServ.loadView("about", () => new AboutCtrl());
   }
 
+  // when a city is searched in the input
   weatherSearched(cityEntered) {
     httpServ.getWeather(cityEntered, (json) => {
       let temp = Math.round(json.current.temp_c);
       console.log(temp);
     });
   }
-
+  
   loadEvents() {
     $("#a-home").click(() => {
       this.hideNavCollapsed();

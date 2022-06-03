@@ -5,6 +5,7 @@
 */
 
 class HttpServ {
+
   constructor() {}
 
   httpErrors(httpErrorCallbackFn) {
