@@ -84,6 +84,14 @@ footer {
   height: 310px;
   border: 1px solid black;    
   border-radius: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.weather-home:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .weather-title-icon {
