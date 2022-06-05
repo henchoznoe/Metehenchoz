@@ -23,7 +23,7 @@ class IndexCtrl {
   loadIcon() {
     let heure = new Date().getHours();
     if (heure > 8 && heure < 20) {
-      document.getElementById("icon").href = "img/sun.jpg";
+      $("#icon").attr('href', 'img/sun.jpg');
     }
   }
   
@@ -32,7 +32,7 @@ class IndexCtrl {
     alert(msg);
   }
 
-  // Close navbar collapse ( to have better experience on mobile phone )
+  // Close navbar collapse when link clicked ( to have better experience on mobile phone )
   hideNavCollapsed() {
     let nav = document.getElementById("navbarResponsive");
     if (nav.className.includes("show")) {
