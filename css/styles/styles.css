@@ -24,9 +24,7 @@ body {
 /* Cursor pointer on nav links */
 #a-home,
 #a-stations,
-#a-doc,
-#a-api,
-#a-about {cursor: pointer;}
+#a-map {cursor: pointer;}
 
 /* Links in navbar animation */
 .nav-link::after {content: "";display: block;width: 0;height: 2px;background: #000;transition: width 0.4s;}

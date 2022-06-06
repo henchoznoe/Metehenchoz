@@ -45,6 +45,7 @@ class HomeCtrl {
   events() {
     $('#link-stations-text-home').click(() => {
       indexCtrl.loadStations();
+      $("#a-stations").addClass("active");
     });
   }
   

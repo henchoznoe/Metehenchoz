@@ -7,7 +7,7 @@
 class StationsCtrl {
 
     constructor() {
-
+      
     }
 
     loadWeather(cityEntered) {
