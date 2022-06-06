@@ -50,8 +50,8 @@ class IndexCtrl {
   loadFooter() {
     httpServ.loadFooter("footer", () => new FooterCtrl());
   }
-  loadAbout() {
-    httpServ.loadView("about", () => new AboutCtrl());
+  loadMap() {
+    httpServ.loadView("map", () => new MapCtrl());
   }
 
   // when a city is searched in the input
@@ -72,11 +72,11 @@ class IndexCtrl {
       $("#a-stations").addClass("active");
       this.loadStations();
     });
-    $("#a-about").click(() => {
+    $("#a-map").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
-      $("#a-about").addClass("active");
-      this.loadAbout();
+      $("#a-map").addClass("active");
+      this.loadMap();
     });
 
     $("#nav-btn-search").click(() => {
