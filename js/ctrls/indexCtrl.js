@@ -57,8 +57,9 @@ class IndexCtrl {
   // when a city is searched in the input
   weatherSearched(cityEntered) {
     httpServ.getWeather(cityEntered, (json) => {
-      let temp = Math.round(json.current.temp_c);
-      console.log(temp);
+      /*let temp = Math.round(json.current.temp_c);
+      console.log(temp);*/
+      console.log(json);
     });
   }
   
