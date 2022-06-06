@@ -7,6 +7,7 @@
 $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
+  stationsCtrl = new StationsCtrl();
   httpServ.httpErrors(indexCtrl.showHttpErrors);
 });
 
@@ -55,11 +56,7 @@ class IndexCtrl {
 
   // when a city is searched in the input
   weatherSearched(cityEntered) {
-    httpServ.getWeather(cityEntered, (json) => {
-      /*let temp = Math.round(json.current.temp_c);
-      console.log(temp);*/
-      console.log(json);
-    });
+    stationsCtrl.loadWeather(cityEntered);
   }
 
   loadEvents() {
@@ -111,7 +108,7 @@ class IndexCtrl {
         }
       }
     });
-    
+
     $("#btn-locate-next").click(() => {
       $("#nav-in-search").val("");
       this.hideNavCollapsed();

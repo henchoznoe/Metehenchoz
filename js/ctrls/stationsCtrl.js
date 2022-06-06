@@ -10,6 +10,12 @@ class StationsCtrl {
 
     }
 
-    
+    loadWeather(cityEntered) {
+      httpServ.getWeather(cityEntered, (json) => {
+        $('#city').html(json.location.name);
+        console.log(json);
+      });
+      
+    }
     
 }
