@@ -83,8 +83,10 @@ class IndexCtrl {
     $("#nav-btn-search").click(() => {
       let cityEntered = $("#nav-in-search").val();
       if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+        this.hideNavCollapsed();
         this.loadStations();
         this.weatherSearched(cityEntered);
+        $("#nav-in-search").val("");
       } else {
         console.log("Invalid characters entered : " + cityEntered);
       }
@@ -95,14 +97,18 @@ class IndexCtrl {
         event.preventDefault();
         let cityEntered = $("#nav-in-search").val();
         if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+          this.hideNavCollapsed();
           this.loadStations();
           this.weatherSearched(cityEntered);
+          $("#nav-in-search").val("");
         } else {
           console.log("Invalid characters entered : " + cityEntered);
         }
       }
     });
     $("#btn-locate-next").click(() => {
+      $("#nav-in-search").val("");
+      this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
