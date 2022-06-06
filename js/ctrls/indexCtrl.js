@@ -11,7 +11,6 @@ $().ready(function () {
 });
 
 class IndexCtrl {
-
   constructor() {
     this.loadIcon();
     this.loadHome();
@@ -23,10 +22,10 @@ class IndexCtrl {
   loadIcon() {
     let heure = new Date().getHours();
     if (heure > 8 && heure < 20) {
-      $("#icon").attr('href', 'img/sun.jpg');
+      $("#icon").attr("href", "img/sun.jpg");
     }
   }
-  
+
   // show http errors
   showHttpErrors(msg) {
     alert(msg);
@@ -62,7 +61,7 @@ class IndexCtrl {
       console.log(json);
     });
   }
-  
+
   loadEvents() {
     $("#a-home").click(() => {
       this.hideNavCollapsed();
@@ -102,6 +101,15 @@ class IndexCtrl {
           console.log("Invalid characters entered : " + cityEntered);
         }
       }
+    });
+    $("#btn-locate-next").click(() => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let latLon = lat + "," + lon;
+        this.loadStations();
+        this.weatherSearched(latLon);
+      });
     });
   }
 }

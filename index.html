@@ -63,16 +63,37 @@
                     </li>
                 </ul>
                 <!-- Search -->
-                <form class="d-flex" id="searchForm">
+                <form class="d-flex">
                     <input class="form-control me-2" id="nav-in-search" placeholder="Search for a city"
                         aria-label="Search for a city" type="text">
-                    <button class="btn btn-outline-dark btnSearch" type="button" id="nav-btn-search">Search</button>
-                </form>
+                    <button class="btn btn-outline-dark btnSearch" type="button" id="nav-btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <span class="mx-2 my-auto"><i class="fa-solid fa-minus"></i></span>
+                    <button class="btn btn-outline-dark btnLocate" type="button" id="nav-btn-locate" data-bs-toggle="modal" data-bs-target="#warningModal">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </button>
+                </form>  
             </div>
             <!-- End List of menus -->
         </div>
     </nav>
     <!-- End navbar -->
+
+    <!-- Modal allow location -->
+    <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Please accept access to your location in the next popup to continue. 
+                    If you have refused in error, please go to your browser settings to accept it.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-locate-next" data-bs-dismiss="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Start main content -->
     <main>
