@@ -12,6 +12,7 @@ class HomeCtrl {
     this.weatherParis();
     this.weatherLondon();
   }
+  
 
   weatherNewYork() {
     httpServ.getWeather('New York', (json) => {
