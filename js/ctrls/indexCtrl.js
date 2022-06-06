@@ -63,6 +63,7 @@ class IndexCtrl {
   }
 
   loadEvents() {
+
     $("#a-home").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
@@ -80,17 +81,20 @@ class IndexCtrl {
       $("#a-about").addClass("active");
       this.loadAbout();
     });
+
     $("#nav-btn-search").click(() => {
       let cityEntered = $("#nav-in-search").val();
       if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
         this.hideNavCollapsed();
         this.loadStations();
+        $("#a-stations").addClass("active");
         this.weatherSearched(cityEntered);
         $("#nav-in-search").val("");
       } else {
         console.log("Invalid characters entered : " + cityEntered);
       }
     });
+
     $("#nav-in-search").keypress((event) => {
       let keycode = event.keyCode ? event.keyCode : event.which;
       if (keycode == "13") {
@@ -99,6 +103,7 @@ class IndexCtrl {
         if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
           this.hideNavCollapsed();
           this.loadStations();
+          $("#a-stations").addClass("active");
           this.weatherSearched(cityEntered);
           $("#nav-in-search").val("");
         } else {
@@ -106,6 +111,7 @@ class IndexCtrl {
         }
       }
     });
+    
     $("#btn-locate-next").click(() => {
       $("#nav-in-search").val("");
       this.hideNavCollapsed();
@@ -114,6 +120,7 @@ class IndexCtrl {
         let lon = position.coords.longitude;
         let latLon = lat + "," + lon;
         this.loadStations();
+        $("#a-stations").addClass("active");
         this.weatherSearched(latLon);
       });
     });
