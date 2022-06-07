@@ -7,7 +7,7 @@
 class HttpServ {
 
   constructor() {
-    
+
   }
 
   httpErrors(httpErrorCallbackFn) {
@@ -15,15 +15,15 @@ class HttpServ {
       error: function (xhr, exception) {
         let msg;
         if (xhr.status === 0) {
-          msg = "Pas d'accès à la ressource serveur demandée !";
+          msg = 'Pas d\'accès à la ressource serveur demandée !';
         } else if (xhr.status === 401) {
-          msg = "La clé API n'est pas fournie ou est invalide !";
+          msg = 'La clé API n\'est pas fournie ou est invalide !';
         } else if (xhr.status === 400) {
-          msg = "Erreur dans la l'URL fournie";
-        } else if (exception === "403") {
-          msg = "Le nombre de call par mois a été dépassé !";
+          msg = 'Erreur dans la l\'URL fournie';
+        } else if (exception === '403') {
+          msg = 'Le nombre de call par mois a été dépassé !';
         } else {
-          msg = "Erreur inconnue : \n" + xhr.responseText;
+          msg = 'Erreur inconnue : \n' + xhr.responseText;
         }
         httpErrorCallbackFn(msg);
       },
@@ -31,16 +31,16 @@ class HttpServ {
   }
 
   loadView(vue, callback) {
-    $("#views").load("views/" + vue + ".html", function () {
-      if (typeof callback !== "undefined") {
+    $('#views').load('views/' + vue + '.html', function () {
+      if (typeof callback !== 'undefined') {
         callback();
       }
     });
   }
 
   loadFooter(vue, callback) {
-    $("#footer").load("views/" + vue + ".html", function () {
-      if (typeof callback !== "undefined") {
+    $('#footer').load('views/' + vue + '.html', function () {
+      if (typeof callback !== 'undefined') {
         callback();
       }
     });
@@ -48,9 +48,9 @@ class HttpServ {
 
   getWeather(city, successCallBack) {
     $.ajax({
-      url: "https://api.weatherapi.com/v1/current.json",
-      type: "GET",
-      contentType: "application/json",
+      url: 'https://api.weatherapi.com/v1/current.json',
+      type: 'GET',
+      contentType: 'application/json',
       data: {
         key: API_KEY,
         q: city,
