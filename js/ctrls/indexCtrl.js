@@ -48,7 +48,7 @@ class IndexCtrl {
     httpServ.loadView('stations', () => new StationsCtrl());
   }
   loadFooter() {
-    httpServ.loadFooter('footer', () => new FooterCtrl());
+    httpServ.loadView('footer', () => new FooterCtrl());
   }
   loadMap() {
     httpServ.loadView('map', () => new MapCtrl());

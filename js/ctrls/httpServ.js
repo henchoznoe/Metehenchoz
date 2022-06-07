@@ -5,10 +5,7 @@
 */
 
 class HttpServ {
-
-  constructor() {
-
-  }
+  constructor() {}
 
   httpErrors(httpErrorCallbackFn) {
     $.ajaxSetup({
@@ -31,19 +28,19 @@ class HttpServ {
   }
 
   loadView(vue, callback) {
-    $('#views').load('views/' + vue + '.html', function () {
-      if (typeof callback !== 'undefined') {
-        callback();
-      }
-    });
-  }
-
-  loadFooter(vue, callback) {
-    $('#footer').load('views/' + vue + '.html', function () {
-      if (typeof callback !== 'undefined') {
-        callback();
-      }
-    });
+    if (vue === 'footer') {
+      $('#footer').load('views/' + vue + '.html', () => {
+        if (typeof callback !== 'undefined') {
+          callback();
+        }
+      });
+    } else {
+      $('#views').load('views/' + vue + '.html', () => {
+        if (typeof callback !== 'undefined') {
+          callback();
+        }
+      });
+    }
   }
 
   getWeather(city, successCallBack) {
@@ -59,5 +56,16 @@ class HttpServ {
     });
   }
 
-  
+  getForecast(city, successCallBack) {
+    $.ajax({
+      url: 'https://api.weatherapi.com/v1/forecast.json',
+      type: 'GET',
+      contentType: 'application/json',
+      data: {
+        key: API_KEY,
+        q: city,
+      },
+      success: successCallBack,
+    });
+  }
 }
