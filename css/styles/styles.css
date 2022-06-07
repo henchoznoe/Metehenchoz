@@ -8,7 +8,7 @@ html{background-color: #fff;}
 
 body {
   margin-bottom: 149px;
-  background-color: rgb(168, 199, 252);
+  background-color: rgb(173, 191, 212);
 }
 
 /* Imports fonts */
@@ -16,8 +16,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #fac05e!important;
-  border-bottom: 1px solid #000000;
+  background-color: #8AAAE5!important;
   animation: fromTop 0.7s;
 }
 
@@ -47,7 +46,7 @@ footer {
   width: 100%;
   height: 150px;
   z-index: -1;
-  background-color: #fac05e;
+  background-color: #8AAAE5;
 }
 
 /* Buttons footer links animation */

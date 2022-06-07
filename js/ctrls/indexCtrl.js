@@ -75,7 +75,7 @@ class IndexCtrl {
     $("#a-map").click(() => {
       this.hideNavCollapsed();
       $("a.nav-link").removeClass("active");
-      $("#a-map").addClass("active");
+      $('#a-map').addClass("active");
       this.loadMap();
     });
 
