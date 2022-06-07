@@ -6,7 +6,9 @@
 
 class HttpServ {
 
-  constructor() {}
+  constructor() {
+    
+  }
 
   httpErrors(httpErrorCallbackFn) {
     $.ajaxSetup({
