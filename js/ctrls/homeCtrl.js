@@ -8,37 +8,17 @@ class HomeCtrl {
 
   constructor() {
     this.events();
-    this.weatherNewYork();
-    this.weatherParis();
-    this.weatherLondon();
-  }
-  
-
-  weatherNewYork() {
-    httpServ.getWeather('New York', (json) => {
-      let temp = Math.round(json.current.temp_c);
-      let time = new Date().toLocaleString('fr-fr', {timeZone: 'America/New_York'});
-      $('#temp-city1').html(temp + '°C' + ' / ' + time.substring(17, 12));
-      $('#icon1').attr('src', json.current.condition.icon);
-    });
-    
+    this.loadWeather('New York', '#icon1', '#temp-city1', 'America/New_York');
+    this.loadWeather('Paris', '#icon2', '#temp-city2', 'Europe/Paris');
+    this.loadWeather('London', '#icon3', '#temp-city3', 'Europe/London');
   }
 
-  weatherParis() {
-    httpServ.getWeather('Paris', (json) => {
+  loadWeather(city, whereIcon, whereTemp, timeZone) {
+    httpServ.getWeather(city, (json) => {
       let temp = Math.round(json.current.temp_c);
-      let time = new Date().toLocaleString('fr-fr', {timeZone: 'Europe/Paris'});
-      $('#temp-city2').html(temp + '°C' + ' / ' + time.substring(17, 12));
-      $('#icon2').attr('src', json.current.condition.icon);
-    });
-  }
-
-  weatherLondon() {
-    httpServ.getWeather('London', (json) => {
-      let temp = Math.round(json.current.temp_c);
-      let time = new Date().toLocaleString('fr-fr', {timeZone: 'Europe/London'});
-      $('#temp-city3').html(temp + '°C' +  ' / ' + time.substring(17, 12));
-      $('#icon3').attr('src', json.current.condition.icon);
+      let time = new Date().toLocaleString('fr-fr', {timeZone: timeZone});
+      $(whereTemp).html(temp + '°C' +  ' / ' + time.substring(17, 12));
+      $(whereIcon).attr('src', json.current.condition.icon);
     });
   }
 
