@@ -50,16 +50,11 @@ class IndexCtrl {
     httpServ.loadView('stations', () => new StationsCtrl());
   }
 
-  // when a city is searched in the input
-  weatherSearched(cityEntered) {
-    stationsCtrl.loadWeather(cityEntered);
-  }
-
   changeViewToStations(cityEntered) {
     this.hideNavCollapsed();
     this.loadStations();
     $('#a-stations').addClass('active');
-    this.weatherSearched(cityEntered);
+    stationsCtrl.loadWeather(cityEntered);
     $('#nav-in-search').val('');
   }
 
@@ -105,7 +100,7 @@ class IndexCtrl {
         let latLon = position.coords.latitude + ',' + position.coords.longitude;
         this.loadStations();
         $('#a-stations').addClass('active');
-        this.weatherSearched(latLon);
+        stationsCtrl.loadWeather(latLon);
       });
     });
   }
