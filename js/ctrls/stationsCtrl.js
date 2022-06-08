@@ -10,11 +10,11 @@ class StationsCtrl {
     this.cityEntered = cityEntered;
     this.loadCurrent(cityEntered);
     this.loadEvents();
-    this.title();
+    this.title(cityEntered);
   }
 
-  title() {
-    httpServ.getForecast((json) => {
+  title(cityEntered) {
+    httpServ.getForecast(cityEntered, (json) => {
       $('#city-title').html(json.location.name);
     })
   }
