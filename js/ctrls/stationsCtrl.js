@@ -8,60 +8,42 @@ class StationsCtrl {
 
   constructor(cityEntered) {
     this.cityEntered = cityEntered;
-    this.loadCurrent();
+    this.loadCurrent(cityEntered);
     this.loadEvents();
-    this.loadWeather(cityEntered);
+    this.title();
   }
 
-  loadWeather(cityEntered) {
-    httpServ.getForecast(cityEntered, (json) => {
-      this.fillAll(json);
-    });
+  title() {
+    httpServ.getForecast((json) => {
+      $('#city-title').html(json.location.name);
+    })
   }
 
-  getLat(cityEntered) {
-    httpServ.getForecast(cityEntered, (json) => {
-      return json.location.lat;
-    });
+  loadCurrent(cityEntered) {
+    httpServ.loadSubView("current", () => new CurrentCtrl(cityEntered));
   }
-
-  getLon(cityEntered) {
-    httpServ.getForecast(cityEntered, (json) => {
-      return json.location.lon;
-    });
+  loadForecast(cityEntered) {
+    httpServ.loadSubView("forecast", () => new ForecastCtrl(cityEntered));
   }
-
-  fillAll(json) {
-    console.log(json);
-    $('#city-title').html(json.location.name);
-    $('#temperature').html('Température = ' + json.current.temp_c);
-  }
-
-  loadCurrent() {
-    httpServ.loadSubView("current", () => new CurrentCtrl());
-  }
-  loadForecast() {
-    httpServ.loadSubView("forecast", () => new ForecastCtrl());
-  }
-  loadMap(lat, lon) {
-    httpServ.loadSubView("map", () => new MapCtrl(lat, lon));
+  loadMap(cityEntered) {
+    httpServ.loadSubView("map", () => new MapCtrl(cityEntered));
   }
 
   loadEvents() {
     $("#current").click(() => {
       $("a.items-tab").removeClass("selected");
       $('#current').addClass('selected');
-      this.loadCurrent();
+      this.loadCurrent(this.cityEntered);
     });
     $("#forecast").click(() => {
       $("a.items-tab").removeClass("selected");
       $('#forecast').addClass('selected');
-      this.loadForecast();
+      this.loadForecast(this.cityEntered);
     });
     $("#map").click(() => {
       $("a.items-tab").removeClass("selected");
       $('#map').addClass('selected');
-      this.loadMap(this.getLat(this.cityEntered), this.getLon(this.cityEntered));
+      this.loadMap(this.cityEntered);
     });
   }
 

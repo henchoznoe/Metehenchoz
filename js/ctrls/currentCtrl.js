@@ -5,7 +5,14 @@
 */
 
 class CurrentCtrl {
-    
-    constructor() {}
-      
+  constructor(cityEntered) {
+    this.cityEntered = cityEntered;
+    this.fillAll(cityEntered);
   }
+
+  fillAll(cityEntered) {
+    httpServ.getForecast(cityEntered, (json) => {
+      $('#temperature').html(json.current.temp_c);
+    });
+  }
+}
