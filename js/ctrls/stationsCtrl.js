@@ -5,6 +5,7 @@
 */
 
 class StationsCtrl {
+
   constructor(cityEntered) {
     this.cityEntered = cityEntered;
     this.loadCurrent();
@@ -14,9 +15,26 @@ class StationsCtrl {
 
   loadWeather(cityEntered) {
     httpServ.getForecast(cityEntered, (json) => {
-      $('#city-title').html(json.location.name);
-      console.log(json);
+      this.fillAll(json);
     });
+  }
+
+  getLat(cityEntered) {
+    httpServ.getForecast(cityEntered, (json) => {
+      return json.location.lat;
+    });
+  }
+
+  getLon(cityEntered) {
+    httpServ.getForecast(cityEntered, (json) => {
+      return json.location.lon;
+    });
+  }
+
+  fillAll(json) {
+    console.log(json);
+    $('#city-title').html(json.location.name);
+    $('#temperature').html('Température = ' + json.current.temp_c);
   }
 
   loadCurrent() {
@@ -25,8 +43,8 @@ class StationsCtrl {
   loadForecast() {
     httpServ.loadSubView("forecast", () => new ForecastCtrl());
   }
-  loadMap() {
-    httpServ.loadSubView("map", () => new MapCtrl());
+  loadMap(lat, lon) {
+    httpServ.loadSubView("map", () => new MapCtrl(lat, lon));
   }
 
   loadEvents() {
@@ -43,7 +61,7 @@ class StationsCtrl {
     $("#map").click(() => {
       $("a.items-tab").removeClass("selected");
       $('#map').addClass('selected');
-      this.loadMap();
+      this.loadMap(this.getLat(this.cityEntered), this.getLon(this.cityEntered));
     });
   }
 
