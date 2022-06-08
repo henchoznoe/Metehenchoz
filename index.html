@@ -24,13 +24,15 @@
     <!-- My stylesheet -->
     <link rel="stylesheet" href="css/styles/styles.css">
     <!-- jQuery 3.6.0 -->
-    <script src="js/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- All Ctrl JS -->
     <script src="js/ctrls/indexCtrl.js"></script>
     <script src="js/ctrls/httpServ.js"></script>
     <script src="js/ctrls/homeCtrl.js"></script>
     <script src="js/ctrls/stationsCtrl.js"></script>
     <script src="js/ctrls/footerCtrl.js"></script>
+    <script src="js/ctrls/currentCtrl.js"></script>
+    <script src="js/ctrls/forecastCtrl.js"></script>
     <script src="js/ctrls/mapCtrl.js"></script>
     <!-- All JS const or settings -->
     <script src="js/const/api.js"></script>
@@ -38,6 +40,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
 </head>
 
 <body>
@@ -56,10 +64,7 @@
                 <!-- Menus -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" id="a-stations">Stations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="a-map">Map</a>
+                        <a class="nav-link items-nav" id="a-stations">Stations</a>
                     </li>
                 </ul>
                 <!-- Search -->
@@ -70,10 +75,11 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                     <span class="mx-2 my-auto"><i class="fa-solid fa-minus"></i></span>
-                    <button class="btn btn-outline-dark btnLocate" type="button" id="nav-btn-locate" data-bs-toggle="modal" data-bs-target="#warningModal">
+                    <button class="btn btn-outline-dark btnLocate" type="button" id="nav-btn-locate"
+                        data-bs-toggle="modal" data-bs-target="#warningModal">
                         <i class="fa-solid fa-location-dot"></i>
                     </button>
-                </form>  
+                </form>
             </div>
             <!-- End List of menus -->
         </div>
@@ -85,11 +91,13 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    Please accept access to your location in the next popup to continue. 
-                    If you have refused in error, please go to your browser settings to accept it.
+                    <p class="text-justify">Please accept access to your location in the next popup to continue.
+                        If you have refused in error, please go to your browser settings to accept it.
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btn-locate-next" data-bs-dismiss="modal">Next</button>
+                    <button type="button" class="btn btn-primary" id="btn-locate-next"
+                        data-bs-dismiss="modal">Next</button>
                 </div>
             </div>
         </div>

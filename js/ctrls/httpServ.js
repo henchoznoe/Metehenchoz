@@ -43,6 +43,14 @@ class HttpServ {
     }
   }
 
+  loadSubView(vue, callback) {
+    $('#subViews').load('views/subViews/' + vue + '.html', () => {
+      if (typeof callback !== 'undefined') {
+        callback();
+      }
+    });
+  }
+
   getWeather(city, successCallBack) {
     $.ajax({
       url: 'https://api.weatherapi.com/v1/current.json',
