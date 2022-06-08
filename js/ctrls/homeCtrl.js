@@ -8,9 +8,9 @@ class HomeCtrl {
 
   constructor() {
     this.events();
-    this.loadWeather('New York', '#icon1', '#temp-city1', 'America/New_York');
-    this.loadWeather('Paris', '#icon2', '#temp-city2', 'Europe/Paris');
-    this.loadWeather('London', '#icon3', '#temp-city3', 'Europe/London');
+    this.loadWeather(HOME_CITY1, '#icon1', '#temp-city1', 'America/New_York');
+    this.loadWeather(HOME_CITY2, '#icon2', '#temp-city2', 'Europe/Paris');
+    this.loadWeather(HOME_CITY3, '#icon3', '#temp-city3', 'Europe/London');
   }
 
   loadWeather(city, whereIcon, whereTemp, timeZone) {

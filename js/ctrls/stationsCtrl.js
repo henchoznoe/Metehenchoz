@@ -5,9 +5,11 @@
 */
 
 class StationsCtrl {
-  constructor() {
+  constructor(cityEntered) {
+    this.cityEntered = cityEntered;
     this.loadCurrent();
     this.loadEvents();
+    this.loadWeather(cityEntered);
   }
 
   loadWeather(cityEntered) {

@@ -7,7 +7,6 @@
 $().ready(function () {
   httpServ = new HttpServ();
   indexCtrl = new IndexCtrl();
-  stationsCtrl = new StationsCtrl();
   httpServ.httpErrors(indexCtrl.showHttpErrors);
 });
 
@@ -46,15 +45,15 @@ class IndexCtrl {
   loadFooter() {
     httpServ.loadView('footer', () => new FooterCtrl());
   }
-  loadStations() {
-    httpServ.loadView('stations', () => new StationsCtrl());
+  loadStations(city) {
+    httpServ.loadView('stations', () => new StationsCtrl(city));
   }
 
   changeViewToStations(cityEntered) {
     this.hideNavCollapsed();
-    this.loadStations();
+    this.loadStations(cityEntered);
     $('#a-stations').addClass('active');
-    stationsCtrl.loadWeather(cityEntered);
+    new StationsCtrl(cityEntered);
     $('#nav-in-search').val('');
   }
 
@@ -68,7 +67,7 @@ class IndexCtrl {
       this.hideNavCollapsed();
       $('a.nav-link').removeClass('active');
       $('#a-stations').addClass('active');
-      this.loadStations();
+      this.loadStations(STATIONS_CITY_DEFAULT);
     });
 
     $('#nav-btn-search').click(() => {
@@ -98,9 +97,9 @@ class IndexCtrl {
       this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
         let latLon = position.coords.latitude + ',' + position.coords.longitude;
-        this.loadStations();
+        this.loadStations(latLon);
         $('#a-stations').addClass('active');
-        stationsCtrl.loadWeather(latLon);
+        new StationsCtrl(latLon);
       });
     });
   }
