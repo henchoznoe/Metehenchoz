@@ -44,11 +44,11 @@ class IndexCtrl {
   loadHome() {
     httpServ.loadView('home', () => new HomeCtrl());
   }
-  loadStations() {
-    httpServ.loadView('stations', () => new StationsCtrl());
-  }
   loadFooter() {
     httpServ.loadView('footer', () => new FooterCtrl());
+  }
+  loadStations() {
+    httpServ.loadView('stations', () => new StationsCtrl());
   }
   loadMap() {
     httpServ.loadView('map', () => new MapCtrl());
@@ -113,9 +113,7 @@ class IndexCtrl {
       $('#nav-in-search').val('');
       this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        let latLon = lat + ',' + lon;
+        let latLon = position.coords.latitude + ',' + position.coords.longitude;
         this.loadStations();
         $('#a-stations').addClass('active');
         this.weatherSearched(latLon);

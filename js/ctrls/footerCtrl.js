@@ -5,11 +5,7 @@
 */
 
 class FooterCtrl {
-
-    constructor() {
-      
-    }
-
     
+  constructor() {}
     
 }
