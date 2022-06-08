@@ -23,7 +23,7 @@ class IndexCtrl {
   loadIcon() {
     let heure = new Date().getHours();
     if (heure > 8 && heure < 20) {
-      $("#icon").attr("href", "img/sun.jpg");
+      $('#icon').attr('href', 'img/sun.jpg');
     }
   }
 
@@ -34,21 +34,20 @@ class IndexCtrl {
 
   // Close navbar collapse when link clicked ( to have better experience on mobile phone )
   hideNavCollapsed() {
-    let nav = document.getElementById("navbarResponsive");
-    if (nav.className.includes("show")) {
-      nav.classList.remove("show");
+    if ($('#navbarResponsive').hasClass('show')) {
+      $('#navbarResponsive').removeClass('show');
     }
   }
 
   // Load views
   loadHome() {
-    httpServ.loadView("home", () => new HomeCtrl());
+    httpServ.loadView('home', () => new HomeCtrl());
   }
   loadFooter() {
-    httpServ.loadView("footer", () => new FooterCtrl());
+    httpServ.loadView('footer', () => new FooterCtrl());
   }
   loadStations() {
-    httpServ.loadView("stations", () => new StationsCtrl());
+    httpServ.loadView('stations', () => new StationsCtrl());
   }
 
   // when a city is searched in the input
@@ -59,53 +58,53 @@ class IndexCtrl {
   changeViewToStations(cityEntered) {
     this.hideNavCollapsed();
     this.loadStations();
-    $("#a-stations").addClass("active");
+    $('#a-stations').addClass('active');
     this.weatherSearched(cityEntered);
-    $("#nav-in-search").val("");
+    $('#nav-in-search').val('');
   }
 
   loadEvents() {
-    $("#a-home").click(() => {
+    $('#a-home').click(() => {
       this.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
+      $('a.nav-link').removeClass('active');
       this.loadHome();
     });
-    $("#a-stations").click(() => {
+    $('#a-stations').click(() => {
       this.hideNavCollapsed();
-      $("a.nav-link").removeClass("active");
-      $("#a-stations").addClass("active");
+      $('a.nav-link').removeClass('active');
+      $('#a-stations').addClass('active');
       this.loadStations();
     });
 
-    $("#nav-btn-search").click(() => {
-      let cityEntered = $("#nav-in-search").val();
-      if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+    $('#nav-btn-search').click(() => {
+      let cityEntered = $('#nav-in-search').val();
+      if (cityEntered !== '' && !cityEntered.match(/[0-9]+$/)) {
         this.changeViewToStations(cityEntered);
       } else {
-        console.log("Invalid characters entered : " + cityEntered);
+        console.log('Invalid characters entered : ' + cityEntered);
       }
     });
 
-    $("#nav-in-search").keypress((event) => {
+    $('#nav-in-search').keypress((event) => {
       let keycode = event.keyCode ? event.keyCode : event.which;
-      if (keycode == "13") {
+      if (keycode == '13') {
         event.preventDefault();
-        let cityEntered = $("#nav-in-search").val();
-        if (cityEntered !== "" && !cityEntered.match(/[0-9]+$/)) {
+        let cityEntered = $('#nav-in-search').val();
+        if (cityEntered !== '' && !cityEntered.match(/[0-9]+$/)) {
           this.changeViewToStations(cityEntered);
         } else {
-          console.log("Invalid characters entered : " + cityEntered);
+          console.log('Invalid characters entered : ' + cityEntered);
         }
       }
     });
 
-    $("#btn-locate-next").click(() => {
-      $("#nav-in-search").val("");
+    $('#btn-locate-next').click(() => {
+      $('#nav-in-search').val('');
       this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
-        let latLon = position.coords.latitude + "," + position.coords.longitude;
+        let latLon = position.coords.latitude + ',' + position.coords.longitude;
         this.loadStations();
-        $("#a-stations").addClass("active");
+        $('#a-stations').addClass('active');
         this.weatherSearched(latLon);
       });
     });

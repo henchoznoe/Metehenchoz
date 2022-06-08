@@ -199,3 +199,11 @@ footer {
 .items-tab:hover {
   color: black;
 }
+
+.nav-tabs {
+  border-bottom: 1px solid white!important;
+}
+
+.selected {
+  border: 1px solid white!important;
+}
