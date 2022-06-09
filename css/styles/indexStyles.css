@@ -13,6 +13,16 @@ body {
   background-color: rgb(173, 191, 212);
 }
 
+body::-webkit-scrollbar {
+	width: 14px;
+	background-color: #8aaae5;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: white;
+	border-radius: 10px;
+}
+
 /* Imports fonts */
 @font-face {
   font-family: Varela;
