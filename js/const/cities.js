@@ -6,4 +6,4 @@ const HOME_CITY3 = 'London';
 const HOME_CITY3_TIMEZONE = 'Europe/London';
 
 
-const STATIONS_CITY_DEFAULT = 'New York';
+const STATION_CITY_DEFAULT = 'New York';

@@ -28,7 +28,7 @@ body {
 
 /* Cursor pointer on nav links */
 #a-home,
-#a-stations,
+#a-station,
 #a-map {
   cursor: pointer;
   color: black;
@@ -67,4 +67,3 @@ body {
   font-weight: bold;
   font-family: Varela;
 }
-

@@ -23,9 +23,9 @@ class HomeCtrl {
   }
 
   events() {
-    $('#link-stations-text-home').click(() => {
-      indexCtrl.loadStations();
-      $('#a-stations').addClass('active');
+    $('#link-station-text-home').click(() => {
+      indexCtrl.loadStation();
+      $('#a-station').addClass('active');
     });
   }
   

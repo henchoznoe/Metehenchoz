@@ -45,15 +45,15 @@ class IndexCtrl {
   loadFooter() {
     httpServ.loadView('footer', () => new FooterCtrl());
   }
-  loadStations(city) {
-    httpServ.loadView('stations', () => new StationsCtrl(city));
+  loadStation(city) {
+    httpServ.loadView('station', () => new StationCtrl(city));
   }
 
-  changeViewToStations(cityEntered) {
+  changeViewToStation(cityEntered) {
     this.hideNavCollapsed();
-    this.loadStations(cityEntered);
-    $('#a-stations').addClass('active');
-    new StationsCtrl(cityEntered);
+    this.loadStation(cityEntered);
+    $('#a-station').addClass('active');
+    new StationCtrl(cityEntered);
     $('#nav-in-search').val('');
   }
 
@@ -63,17 +63,17 @@ class IndexCtrl {
       $('a.nav-link').removeClass('active');
       this.loadHome();
     });
-    $('#a-stations').click(() => {
+    $('#a-station').click(() => {
       this.hideNavCollapsed();
       $('a.nav-link').removeClass('active');
-      $('#a-stations').addClass('active');
-      this.loadStations(STATIONS_CITY_DEFAULT);
+      $('#a-station').addClass('active');
+      this.loadStation(STATION_CITY_DEFAULT);
     });
 
     $('#nav-btn-search').click(() => {
       let cityEntered = $('#nav-in-search').val();
       if (cityEntered !== '' && !cityEntered.match(/[0-9]+$/)) {
-        this.changeViewToStations(cityEntered);
+        this.changeViewToStation(cityEntered);
       } else {
         console.log('Invalid characters entered : ' + cityEntered);
       }
@@ -85,7 +85,7 @@ class IndexCtrl {
         event.preventDefault();
         let cityEntered = $('#nav-in-search').val();
         if (cityEntered !== '' && !cityEntered.match(/[0-9]+$/)) {
-          this.changeViewToStations(cityEntered);
+          this.changeViewToStation(cityEntered);
         } else {
           console.log('Invalid characters entered : ' + cityEntered);
         }
@@ -97,9 +97,9 @@ class IndexCtrl {
       this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
         let latLon = position.coords.latitude + ',' + position.coords.longitude;
-        this.loadStations(latLon);
-        $('#a-stations').addClass('active');
-        new StationsCtrl(latLon);
+        this.loadStation(latLon);
+        $('#a-station').addClass('active');
+        new StationCtrl(latLon);
       });
     });
   }

@@ -1,10 +1,10 @@
 /*
-  But     : stations's ctrl
+  But     : station's ctrl
   Auteur  : Noé Henchoz
   Date    : 31.05.2022 / v1.0 
 */
 
-class StationsCtrl {
+class StationCtrl {
 
   constructor(cityEntered) {
     this.cityEntered = cityEntered;
