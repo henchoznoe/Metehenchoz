@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Icon change from the actual time (sun or moon) -->
+    <!-- Icon that changes according to the time (sun or moon) -->
     <link rel="icon" href="img/moon.png" id="icon">
     <!-- Stylesheet Bootstrap 5.0.2 -->
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="css/styles/forecastStyles.css">
     <link rel="stylesheet" href="css/styles/currentStyles.css">
     <link rel="stylesheet" href="css/styles/animations.css">
-    <!-- jQuery 3.6.0 -->
+    <!-- CDN jQuery 3.6.0 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- All Ctrl JS -->
     <script src="js/ctrls/indexCtrl.js"></script>
@@ -41,13 +41,14 @@
     <script src="js/ctrls/currentCtrl.js"></script>
     <script src="js/ctrls/forecastCtrl.js"></script>
     <script src="js/ctrls/mapCtrl.js"></script>
-    <!-- All JS const or settings -->
+    <!-- All JS const -->
     <script src="js/const/api.js"></script>
     <script src="js/const/cities.js"></script>
     <!-- Icons 6.1.1 from https://fontawesome.com/ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Map from https://leafletjs.com/ -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
         crossorigin="" />
@@ -75,7 +76,7 @@
                         <a class="nav-link items-nav" id="a-stations">Stations</a>
                     </li>
                 </ul>
-                <!-- Search -->
+                <!-- Start Search -->
                 <form class="d-flex">
                     <input class="form-control me-2" id="nav-in-search" placeholder="Search for a city"
                         aria-label="Search for a city" type="text">
@@ -88,13 +89,14 @@
                         <i class="fa-solid fa-location-dot"></i>
                     </button>
                 </form>
+                <!-- End Search -->
             </div>
             <!-- End List of menus -->
         </div>
     </nav>
     <!-- End navbar -->
 
-    <!-- Modal allow location -->
+    <!-- Start Modal allow location -->
     <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -110,6 +112,7 @@
             </div>
         </div>
     </div>
+    <!-- End Modal allow location -->
 
     <!-- Start main content -->
     <main>
