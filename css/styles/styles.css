@@ -194,6 +194,7 @@ footer {
 .items-tab {
   color: black;
   cursor: pointer;
+  font-family: Varela;
 }
 
 .items-tab:hover {
