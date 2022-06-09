@@ -1,0 +1,70 @@
+/*
+  But     : Main CSS file
+  Auteur  : Noé Henchoz
+  Date    : 25.05.2022 / v1.0 
+*/
+
+html {
+  background-color: #fff;
+}
+
+body {
+  margin-bottom: 149px;
+  background-color: rgb(173, 191, 212);
+}
+
+/* Imports fonts */
+@font-face {
+  font-family: Varela;
+  src: url("../../fonts/VarelaRound-Regular.ttf");
+}
+
+/* Navbar */
+.navbar {
+  background-color: #8aaae5 !important;
+  animation: fromTop 0.7s;
+  font-family: Varela;
+}
+
+/* Cursor pointer on nav links */
+#a-home,
+#a-stations,
+#a-map {
+  cursor: pointer;
+  color: black;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+}
+
+/* Links in navbar animation */
+.items-nav::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.4s;
+}
+.items-nav:hover::after {
+  width: 100%;
+}
+.active::after {
+  width: 100%;
+}
+
+/* Remove outline on bootstrap toggle button */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Title of each view */
+.title-view-anime {
+  animation: fromLeftWithBlur 1s;
+  font-weight: bold;
+  font-family: Varela;
+}
+

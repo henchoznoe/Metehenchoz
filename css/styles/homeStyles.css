@@ -1,0 +1,71 @@
+.weather-home {
+  height: 310px;
+  border: 1px solid black;
+  border-radius: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.weather-home:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.weather-title-icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-1 {
+  background-image: url("../../img/newyork.jpg");
+  background-size: cover;
+}
+
+.weather-2 {
+  background-image: url("../../img/paris.jpg");
+  background-size: cover;
+}
+
+.weather-3 {
+  background-image: url("../../img/london.jpg");
+  background-size: cover;
+}
+.icon {
+  height: 96px;
+  width: 96px;
+}
+
+.title-city,
+.subtitle {
+  font-weight: 500;
+}
+
+.div-temperature-city {
+  position: absolute;
+}
+
+.temperature-city {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+}
+
+.text-home {
+  font-size: x-large;
+}
+
+.link {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.row-weather-home {
+  animation: fromRightWithBlur 1.5s;
+}
