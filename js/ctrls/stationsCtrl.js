@@ -19,7 +19,7 @@ class StationsCtrl {
       $('#city-icon').attr('src', json.current.condition.icon);
       $('#text-icon').html(json.current.condition.text);
       console.log(json)
-    })
+    });
   }
 
   loadCurrent(cityEntered) {
