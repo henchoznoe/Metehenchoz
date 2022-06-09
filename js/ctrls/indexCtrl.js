@@ -21,7 +21,7 @@ class IndexCtrl {
   // load Icon of the website
   loadIcon() {
     let heure = new Date().getHours();
-    if (heure > 8 && heure < 20) {
+    if (heure >= 8 && heure <= 20) {
       $('#icon').attr('href', 'img/sun.jpg');
     }
   }

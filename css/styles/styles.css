@@ -209,6 +209,22 @@ footer {
   background-color: white!important;
 }
 
-#city-title {
+.city-title {
+  font-family: Varela;
+}
+
+.city-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.city-icon {
+  height: 96px;
+  width: 96px;
+}
+
+.text-icon {
+  font-size: medium;
   font-family: Varela;
 }
