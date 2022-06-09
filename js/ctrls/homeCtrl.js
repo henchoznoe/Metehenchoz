@@ -16,10 +16,13 @@ class HomeCtrl {
   loadWeather(city, whereTitle, whereIcon, whereTemp, timeZone) {
     $(whereTitle).html(city);
     httpServ.getWeather(city, (json) => {
-      let time = new Date().toLocaleString('fr-fr', {timeZone: timeZone});
-      $(whereTemp).html(Math.round(json.current.temp_c) + '°C' +  ' / ' + time.substring(17, 12));
+      $(whereTemp).html(Math.round(json.current.temp_c) + '°C' +  ' / ' + this.getActualTime(timeZone));
       $(whereIcon).attr('src', json.current.condition.icon);
     });
+  }
+
+  getActualTime(timeZone) {
+    return new Date().toLocaleString('fr-fr', {timeZone: timeZone}).substring(17, 12);
   }
 
   events() {
