@@ -12,7 +12,7 @@ class CurrentCtrl {
 
   fillAll(cityEntered) {
     httpServ.getForecast(cityEntered, (json) => {
-      $('#temperature').html(json.current.temp_c);
+      $('#current-temperature').html(json.current.temp_c);
     });
   }
 }
