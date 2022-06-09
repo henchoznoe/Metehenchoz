@@ -24,8 +24,7 @@ class HomeCtrl {
 
   events() {
     $('#link-station-text-home').click(() => {
-      indexCtrl.loadStation();
-      $('#a-station').addClass('active');
+      $('#a-station').click();
     });
   }
   
