@@ -51,7 +51,7 @@ class HttpServ {
     });
   }
 
-  getWeather(city, successCallBack) {
+  getCurrent(city, successCallBack) {
     $.ajax({
       url: 'https://api.weatherapi.com/v1/current.json',
       type: 'GET',

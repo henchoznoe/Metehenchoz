@@ -7,7 +7,12 @@
 class MapCtrl {
   constructor(citySearched) {
     this.citySearched = citySearched;
-    httpServ.getForecast(citySearched, (json) => {
+    this.loadMap(citySearched);
+    
+  }
+
+  loadMap(citySearched) {
+    httpServ.getCurrent(citySearched, (json) => {
       this.initMap(json.location.lat, json.location.lon, citySearched);
     });
   }

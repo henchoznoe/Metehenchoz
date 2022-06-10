@@ -11,8 +11,8 @@ class CurrentCtrl {
   }
 
   fillAll(cityEntered) {
-    httpServ.getForecast(cityEntered, (json) => {
-      $('#current-temperature').html(json.current.temp_c);
+    httpServ.getCurrent(cityEntered, (json) => {
+      $('#temperature-current').html(json.current.temp_c);
     });
   }
 }
