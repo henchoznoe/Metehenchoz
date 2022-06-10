@@ -1,9 +1,0 @@
-.mapid {
-  height: 800px;
-}
-
-@media screen and (max-width: 576px) {
-  .mapid {
-    height: 600px;
-  }
-}

@@ -1,0 +1,251 @@
+/*
+  But     : Main CSS file
+  Auteur  : Noé Henchoz
+  Date    : 25.05.2022 / v1.0 
+*/
+
+html {
+  background-color: #fff;
+}
+
+body {
+  margin-bottom: 149px;
+  background-color: rgb(173, 191, 212);
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+  background-color: #8aaae5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Imports fonts */
+@font-face {
+  font-family: Varela;
+  src: url("../../fonts/VarelaRound-Regular.ttf");
+}
+
+/* Navbar */
+.navbar {
+  background-color: #8aaae5 !important;
+  animation: fromTop 0.7s;
+  font-family: Varela;
+}
+
+/* Cursor pointer on nav links */
+#a-home,
+#a-station,
+#a-map {
+  cursor: pointer;
+  color: black;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+}
+
+/* Links in navbar animation */
+.items-nav::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.4s;
+}
+.items-nav:hover::after {
+  width: 100%;
+}
+.active::after {
+  width: 100%;
+}
+
+/* Remove outline on bootstrap toggle button */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Title of each view */
+.title-view-anime {
+  animation: fromLeftWithBlur 1s;
+  font-weight: bold;
+  font-family: Varela;
+}
+
+.weather-home {
+  height: 310px;
+  border: 1px solid black;
+  border-radius: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.weather-home:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.weather-title-icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-1 {
+  background-image: url("../../img/newyork.jpg");
+  background-size: cover;
+}
+
+.weather-2 {
+  background-image: url("../../img/paris.jpg");
+  background-size: cover;
+}
+
+.weather-3 {
+  background-image: url("../../img/london.jpg");
+  background-size: cover;
+}
+.icon {
+  height: 96px;
+  width: 96px;
+}
+
+.title-city,
+.subtitle {
+  font-weight: 500;
+}
+
+.div-temperature-city {
+  position: absolute;
+}
+
+.temperature-city {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+}
+
+.text-home {
+  font-size: x-large;
+}
+
+.link {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.row-weather-home {
+  animation: fromRightWithBlur 1.5s;
+}
+
+.items-tab {
+    color: black;
+    cursor: pointer;
+    font-family: Varela;
+  }
+  
+  .items-tab:hover {
+    color: black;
+  }
+  
+  .nav-tabs {
+    border-bottom: 1px solid white !important;
+  }
+  
+  .selected {
+    border: 1px solid white !important;
+    background-color: white !important;
+  }
+  
+  .city-title {
+    font-family: Varela;
+  }
+  
+  .city-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .city-icon {
+    height: 96px;
+    width: 96px;
+  }
+  
+  .text-icon {
+    font-size: medium;
+    font-family: Varela;
+  }
+  
+/* footer */
+footer {
+    width: 100%;
+    height: 150px;
+    z-index: -1;
+    background-color: #8aaae5;
+  }
+  
+  /* Buttons footer links animation */
+  .btn-footer {
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .btn-footer:hover {
+    transform: scale(1.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .mapid {
+    height: 800px;
+  }
+  
+  @media screen and (max-width: 576px) {
+    .mapid {
+      height: 600px;
+    }
+  }
+  
+  /* Keyframes animations */
+@keyframes fromLeftWithBlur {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fromRightWithBlur {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fromTop {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
