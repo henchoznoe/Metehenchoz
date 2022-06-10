@@ -20,7 +20,7 @@ class HomeCtrl {
       $(whereIcon).attr('src', json.current.condition.icon);
     });
   }
-  
+
   getActualTime(timeZone) {
     return new Date().toLocaleString('fr-fr', {timeZone: timeZone}).substring(17, 12);
   }
