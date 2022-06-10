@@ -5,7 +5,6 @@
 */
 
 class StationCtrl {
-
   constructor(cityEntered) {
     this.cityEntered = cityEntered;
     this.loadCurrent(cityEntered);
@@ -15,10 +14,10 @@ class StationCtrl {
 
   loadHead(cityEntered) {
     httpServ.getForecast(cityEntered, (json) => {
-      $('#city-title').html(json.location.name);
-      $('#city-icon').attr('src', json.current.condition.icon);
-      $('#text-icon').html(json.current.condition.text);
-      console.log(json)
+      $("#city-title").html(json.location.name);
+      $("#city-icon").attr("src", json.current.condition.icon);
+      $("#text-icon").html(json.current.condition.text);
+      console.log(json);
     });
   }
 
@@ -34,20 +33,25 @@ class StationCtrl {
 
   loadEvents() {
     $("#current").click(() => {
-      $("a.items-tab").removeClass("selected");
-      $('#current').addClass('selected');
-      this.loadCurrent(this.cityEntered);
+      if (!$("#current").hasClass("selected")) {
+        $("a.items-tab").removeClass("selected");
+        $("#current").addClass("selected");
+        this.loadCurrent(this.cityEntered);
+      }
     });
     $("#forecast").click(() => {
-      $("a.items-tab").removeClass("selected");
-      $('#forecast').addClass('selected');
-      this.loadForecast(this.cityEntered);
+      if (!$("#forecast").hasClass("selected")) {
+        $("a.items-tab").removeClass("selected");
+        $("#forecast").addClass("selected");
+        this.loadForecast(this.cityEntered);
+      }
     });
     $("#map").click(() => {
-      $("a.items-tab").removeClass("selected");
-      $('#map').addClass('selected');
-      this.loadMap(this.cityEntered);
+      if (!$("#map").hasClass("selected")) {
+        $("a.items-tab").removeClass("selected");
+        $("#map").addClass("selected");
+        this.loadMap(this.cityEntered);
+      }
     });
   }
-
 }
