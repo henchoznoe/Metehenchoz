@@ -59,7 +59,6 @@ class HttpServ {
       data: {
         key: API_KEY,
         q: city,
-        lang: LANGUAGE,
       },
       success: successCallBack,
     });
@@ -73,7 +72,6 @@ class HttpServ {
       data: {
         key: API_KEY,
         q: city,
-        lang: LANGUAGE,
       },
       success: successCallBack,
     });
