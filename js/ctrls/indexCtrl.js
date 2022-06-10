@@ -28,7 +28,7 @@ class IndexCtrl {
 
   // show http errors
   showHttpErrors(msg) {
-    alert(msg);
+    //alert(msg);
   }
 
   // Close navbar collapse when link clicked ( to have better experience on mobile phone )
