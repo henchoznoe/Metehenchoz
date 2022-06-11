@@ -29,6 +29,15 @@ class HomeCtrl {
     $('#link-station-text-home').click(() => {
       $('#a-station').click();
     });
+    $('#weather-1').click(() => {
+      indexCtrl.changeViewToStation(HOME_CITY1);
+    });
+    $('#weather-2').click(() => {
+      indexCtrl.changeViewToStation(HOME_CITY2);
+    });
+    $('#weather-3').click(() => {
+      indexCtrl.changeViewToStation(HOME_CITY3);
+    });
   }
   
 }
