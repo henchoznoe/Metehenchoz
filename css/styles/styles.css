@@ -250,6 +250,26 @@ footer {
 }
 
 .row-current {
-  height: 100px;
-  padding: 10px;
+  height: auto;
+  padding: 20px;
+}
+
+.info-current {
+  font-family: Varela;
+  font-size: xx-large;
+}
+
+.desc-current {
+  font-family: Varela;
+  font-size: large;
+}
+
+.div-clickable-current {
+  transition: background-color 0.4s ease-in-out;
+}
+
+.div-clickable-current:hover {
+  cursor: pointer;
+  background-color: rgba(138, 170, 229, 0.5);
+  transition: background-color 0.4s ease-in-out;
 }
