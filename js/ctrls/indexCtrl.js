@@ -92,7 +92,7 @@ class IndexCtrl {
       }
     });
 
-    $('#btn-locate-next').click(() => {
+    $('#nav-btn-locate').click(() => {
       $('#nav-in-search').val('');
       this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {

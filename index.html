@@ -13,7 +13,6 @@
     <title>Météhenchoz - World weather</title>
     <!-- Encoding and responsive -->
     <meta charset="UTF-8">
-    <meta name="description" content="Test">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Icon that changes according to the time (sun or moon) -->
@@ -78,8 +77,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                     <span class="mx-2 my-auto"><i class="fa-solid fa-minus"></i></span>
-                    <button class="btn btn-outline-dark btnLocate" type="button" id="nav-btn-locate"
-                        data-bs-toggle="modal" data-bs-target="#warningModal">
+                    <button class="btn btn-outline-dark btnLocate" type="button" id="nav-btn-locate">
                         <i class="fa-solid fa-location-dot"></i>
                     </button>
                 </form>
@@ -89,24 +87,6 @@
         </div>
     </nav>
     <!-- End navbar -->
-
-    <!-- Start Modal allow location -->
-    <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <p class="text-justify">Please accept access to your location in the next popup to continue.
-                        If you have refused in error, please go to your browser settings to accept it.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btn-locate-next"
-                        data-bs-dismiss="modal">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Modal allow location -->
 
     <!-- Start main content -->
     <main>
