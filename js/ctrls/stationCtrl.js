@@ -15,8 +15,9 @@ class StationCtrl {
   loadHead(cityEntered) {
     httpServ.getForecast(cityEntered, (json) => {
       $("#city-title").html(json.location.name);
-      $("#city-icon").attr("src", json.current.condition.icon);
+      $("#city-icon").attr("src", 'https:'+json.current.condition.icon);
       $("#text-icon").html(json.current.condition.text);
+      console.log(json)
     });
   }
 

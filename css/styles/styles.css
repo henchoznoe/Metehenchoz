@@ -273,3 +273,12 @@ footer {
   background-color: rgba(138, 170, 229, 0.5);
   transition: background-color 0.4s ease-in-out;
 }
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
+}
+
+.accordion-body {
+  background-color: rgb(173, 191, 212) !important;
+}

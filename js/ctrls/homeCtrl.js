@@ -17,8 +17,9 @@ class HomeCtrl {
     $(whereTitle).html(city);
     httpServ.getCurrent(city, (json) => {
       $(whereTemp).html(Math.round(json.current.temp_c) + '°C' +  ' / ' + this.getActualTime(timeZone));
-      $(whereIcon).attr('src', json.current.condition.icon);
+      $(whereIcon).attr('src', 'https:'+json.current.condition.icon);
     });
+    
   }
 
   getActualTime(timeZone) {
