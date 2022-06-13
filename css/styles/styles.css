@@ -147,7 +147,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .row-weather-home {
-  animation: fromRightWithBlur 1.5s;
+  animation: fromRightWithBlur 1s;
 }
 
 .items-tab {

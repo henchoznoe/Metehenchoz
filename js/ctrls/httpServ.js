@@ -54,27 +54,27 @@ class HttpServ {
   getCurrent(city, successCallBack) {
     $.ajax({
       url: 'https://api.weatherapi.com/v1/current.json',
-      type: 'GET',
-      contentType: 'application/json',
+      method: 'GET',
+      contentType: 'application/json; charset=utf-8',
       data: {
         key: API_KEY,
         q: city,
       },
-      success: successCallBack,
+      success: successCallBack
     });
   }
 
   getForecast(city, successCallBack) {
     $.ajax({
       url: 'https://api.weatherapi.com/v1/forecast.json',
-      type: 'GET',
-      contentType: 'application/json',
+      method: 'GET',
+      contentType: 'application/json; charset=utf-8',
       data: {
         key: API_KEY,
         q: city,
         days: 3,
       },
-      success: successCallBack,
+      success: successCallBack
     });
   }
 }
