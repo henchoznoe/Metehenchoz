@@ -16,11 +16,14 @@ class ForecastCtrl {
       this.fillForecast1(json);
       this.fillForecast2(json);
       this.fillForecast3(json);
+      console.log(json)
     });
   }
 
   fillForecast1(json) {
     $('#date-1-forecast').html(new Date(json.forecast.forecastday[0].date).toDateString());
+    $('#sunrise-1-forecast').html(json.forecast.forecastday[0].astro.sunrise);
+    $('#sunset-1-forecast').html(json.forecast.forecastday[0].astro.sunset);
   }
 
   fillForecast2(json) {

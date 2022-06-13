@@ -72,7 +72,7 @@ class HttpServ {
       data: {
         key: API_KEY,
         q: city,
-        days: 3,
+        days: 3
       },
       success: successCallBack
     });

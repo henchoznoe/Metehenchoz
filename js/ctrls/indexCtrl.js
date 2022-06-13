@@ -96,7 +96,7 @@ class IndexCtrl {
       $('#nav-in-search').val('');
       this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
-        let latLon = position.coords.latitude + ',' + position.coords.longitude;
+        let latLon = position.coords.latitude.toFixed(3) + ',' + position.coords.longitude.toFixed(3);
         this.loadStation(latLon);
         $('#a-station').addClass('active');
         new StationCtrl(latLon);
