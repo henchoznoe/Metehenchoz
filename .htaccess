@@ -1,4 +1,3 @@
-# Force HTTPS
 RewriteEngine on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [OR]
 RewriteCond %{HTTP_HOST} ^www. [NC]
