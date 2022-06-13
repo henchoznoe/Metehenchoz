@@ -7,38 +7,15 @@
 class HomeCtrl {
   constructor() {
     this.events();
-    this.loadWeather(
-      HOME_CITY1,
-      "#title-city1",
-      "#icon1",
-      "#temp-city1",
-      HOME_CITY1_TIMEZONE
-    );
-    this.loadWeather(
-      HOME_CITY2,
-      "#title-city2",
-      "#icon2",
-      "#temp-city2",
-      HOME_CITY2_TIMEZONE
-    );
-    this.loadWeather(
-      HOME_CITY3,
-      "#title-city3",
-      "#icon3",
-      "#temp-city3",
-      HOME_CITY3_TIMEZONE
-    );
+    this.loadWeather(HOME_CITY1,"#title-city1","#icon1","#temp-city1",HOME_CITY1_TIMEZONE);
+    this.loadWeather(HOME_CITY2,"#title-city2","#icon2","#temp-city2",HOME_CITY2_TIMEZONE);
+    this.loadWeather(HOME_CITY3,"#title-city3","#icon3","#temp-city3",HOME_CITY3_TIMEZONE);
   }
 
   loadWeather(city, whereTitle, whereIcon, whereTemp, timeZone) {
     $(whereTitle).html(city);
     httpServ.getCurrent(city, (json) => {
-      $(whereTemp).html(
-        Math.round(json.current.temp_c) +
-          "°C" +
-          " / " +
-          this.getActualTime(timeZone)
-      );
+      $(whereTemp).html(Math.round(json.current.temp_c) +"°C" +" / " +this.getActualTime(timeZone));
       $(whereIcon).attr("src", "https:" + json.current.condition.icon);
     });
   }
