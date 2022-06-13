@@ -19,11 +19,10 @@ class HomeCtrl {
       $(whereTemp).html(Math.round(json.current.temp_c) + '°C' +  ' / ' + this.getActualTime(timeZone));
       $(whereIcon).attr('src', 'https:'+json.current.condition.icon);
     });
-    
   }
 
   getActualTime(timeZone) {
-    return new Date().toLocaleString('fr-fr', {timeZone: timeZone}).substring(17, 12);
+    return new Date().toLocaleString('fr-fr', {timeZone: timeZone}).substring(11,17);
   }
 
   events() {
