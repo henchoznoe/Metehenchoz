@@ -249,26 +249,31 @@ footer {
   }
 }
 
-.row-current {
+.row-current,
+.row-forecast {
   height: auto;
   padding: 20px;
 }
 
-.info-current {
+.info-current,
+.info-forecast {
   font-family: Varela;
   font-size: xx-large;
 }
 
-.desc-current {
+.desc-current,
+.desc-forecast {
   font-family: Varela;
   font-size: large;
 }
 
-.div-clickable-current {
+.div-clickable-current,
+.div-clickable-forecast {
   transition: background-color 0.4s ease-in-out;
 }
 
-.div-clickable-current:hover {
+.div-clickable-current:hover,
+.div-clickable-forecast:hover {
   cursor: pointer;
   background-color: rgba(138, 170, 229, 0.5);
   transition: background-color 0.4s ease-in-out;
@@ -283,3 +288,6 @@ footer {
   background-color: rgb(173, 191, 212) !important;
 }
 
+.title-accordion-items {
+  font-family: Varela;
+}

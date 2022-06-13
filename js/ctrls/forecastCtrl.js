@@ -24,6 +24,9 @@ class ForecastCtrl {
     $('#date-1-forecast').html(new Date(json.forecast.forecastday[0].date).toDateString());
     $('#sunrise-1-forecast').html(json.forecast.forecastday[0].astro.sunrise);
     $('#sunset-1-forecast').html(json.forecast.forecastday[0].astro.sunset);
+    $('#minTemp-1-forecast').html(json.forecast.forecastday[0].day.mintemp_c + '°C');
+    $('#avgTemp-1-forecast').html(json.forecast.forecastday[0].day.avgtemp_c + '°C');
+    $('#maxTemp-1-forecast').html(json.forecast.forecastday[0].day.maxtemp_c + '°C');
   }
 
   fillForecast2(json) {
