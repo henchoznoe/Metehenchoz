@@ -16,6 +16,7 @@ class ForecastCtrl {
       this.fillForecast1(json);
       this.fillForecast2(json);
       this.fillForecast3(json);
+      console.log(json)
     });
   }
 
