@@ -27,10 +27,17 @@ class ForecastCtrl {
     $('#minTemp-1-forecast').html(json.forecast.forecastday[0].day.mintemp_c + '°C');
     $('#avgTemp-1-forecast').html(json.forecast.forecastday[0].day.avgtemp_c + '°C');
     $('#maxTemp-1-forecast').html(json.forecast.forecastday[0].day.maxtemp_c + '°C');
+    for (let i = 0; i < (json.forecast.forecastday[0].hour).length; i++) {
+      console.log('ok')
+      $('#div-days-1-forecast').append('<div class="col-lg-1 col-md-3 col-sm-3 text-center">vvv</div>');
+      $('#div-hour-1-forecast').append('<div class="col-lg-1 col-md-3 col-sm-3 text-center">vvvv</div>');
+    }
   }
 
   fillForecast2(json) {
     $('#date-2-forecast').html(new Date(json.forecast.forecastday[1].date).toDateString());
+    $('#sunrise-2-forecast').html(json.forecast.forecastday[1].astro.sunrise);
+    $('#sunset-2-forecast').html(json.forecast.forecastday[1].astro.sunset);
   }
 
   fillForecast3(json) {

@@ -16,7 +16,6 @@ class CurrentCtrl {
       $("#temperature-current").html(json.current.temp_c + "°C");
       $("#feelslike-current").html(json.current.feelslike_c + "°C");
       $("#humidity-current").html(json.current.humidity + "%");
-      $("#cloud-current").css("width", json.current.cloud + "%");
       $("#cloud-current").html(json.current.cloud + "%");
       $('#wind-current').html(json.current.wind_kph + ' km/h');
       $('#windDir-current').html(json.current.wind_dir);
