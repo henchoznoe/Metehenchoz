@@ -73,7 +73,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Title of each view */
 .title-view-anime {
-  animation: fromLeftWithBlur 1s;
+  animation: fromTop 1s;
   font-weight: bold;
   font-family: Varela;
 }
@@ -144,10 +144,6 @@ body::-webkit-scrollbar-thumb {
 .link:hover {
   color: black;
   transition: color 0.3s ease-in-out;
-}
-
-.row-weather-home {
-  animation: fromRightWithBlur 1s;
 }
 
 .items-tab {
@@ -231,7 +227,7 @@ footer {
 
 @keyframes fromRightWithBlur {
   0% {
-    transform: translateX(200px);
+    transform: translateX(100px);
     opacity: 0;
   }
   100% {
