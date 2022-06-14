@@ -287,3 +287,8 @@ footer {
 .title-accordion-items {
   font-family: Varela;
 }
+
+.days-hour-1-forecast,
+.days-temp-1-forecast {
+  font-family: Varela;
+}
