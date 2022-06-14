@@ -60,6 +60,7 @@ class ForecastCtrl {
     $('#date-3-forecast').html(new Date(json.forecast.forecastday[2].date).toDateString());
     $('#sunrise-3-forecast').html(json.forecast.forecastday[2].astro.sunrise);
     $('#sunset-3-forecast').html(json.forecast.forecastday[2].astro.sunset);
+    
   }
 
 }
