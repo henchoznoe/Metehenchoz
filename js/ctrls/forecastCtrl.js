@@ -28,10 +28,10 @@ class ForecastCtrl {
     $('#avgTemp-1-forecast').html(json.forecast.forecastday[0].day.avgtemp_c + '°C');
     $('#maxTemp-1-forecast').html(json.forecast.forecastday[0].day.maxtemp_c + '°C');
     for (let i = 0; i < (json.forecast.forecastday[0].hour).length; i++) {
-      $('#div-days-1-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-'+(i+1)+'-forecast"></div>');
-      $('#div-hours-'+(i+1)+'-forecast').append('<span class="days-hour-1-forecast" id="days-hour-'+(i+1)+'-forecast"></span><br>');
-      $('#div-hours-'+(i+1)+'-forecast').append('<img id="days-icon-'+(i+1)+'-forecast"><br>');
-      $('#div-hours-'+(i+1)+'-forecast').append('<span class="days-temp-1-forecast" id="days-temp-'+(i+1)+'-forecast">temp</span>');
+      $('#div-days-1-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-1-'+(i+1)+'-forecast"></div>');
+      $('#div-hours-1-'+(i+1)+'-forecast').append('<span class="days-hour-1-forecast" id="days-hour-'+(i+1)+'-forecast"></span><br>');
+      $('#div-hours-1-'+(i+1)+'-forecast').append('<img id="days-icon-'+(i+1)+'-forecast"><br>');
+      $('#div-hours-1-'+(i+1)+'-forecast').append('<span class="days-temp-1-forecast" id="days-temp-'+(i+1)+'-forecast">temp</span>');
       $('#days-hour-'+(i+1)+'-forecast').html(json.forecast.forecastday[0].hour[i].time.substring(11,16));
       $('#days-icon-'+(i+1)+'-forecast').attr('src', json.forecast.forecastday[0].hour[i].condition.icon);
       $('#days-temp-'+(i+1)+'-forecast').html(Math.round(json.forecast.forecastday[0].hour[i].temp_c) + '°C');
@@ -46,10 +46,10 @@ class ForecastCtrl {
     $('#avgTemp-2-forecast').html(json.forecast.forecastday[1].day.avgtemp_c + '°C');
     $('#maxTemp-2-forecast').html(json.forecast.forecastday[1].day.maxtemp_c + '°C');
     for (let i = 0; i < (json.forecast.forecastday[1].hour).length; i++) {
-      $('#div-days-1-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-'+(i+1)+'-forecast"></div>');
-      $('#div-hours-'+(i+1)+'-forecast').append('<span class="days-hour-2-forecast" id="days-hour-'+(i+1)+'-forecast"></span><br>');
-      $('#div-hours-'+(i+1)+'-forecast').append('<img id="days-icon-'+(i+1)+'-forecast"><br>');
-      $('#div-hours-'+(i+1)+'-forecast').append('<span class="days-temp-2-forecast" id="days-temp-'+(i+1)+'-forecast">temp</span>');
+      $('#div-days-2-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-2-'+(i+1)+'-forecast"></div>');
+      $('#div-hours-2-'+(i+1)+'-forecast').append('<span class="days-hour-2-forecast" id="days-hour-'+(i+1)+'-forecast"></span><br>');
+      $('#div-hours-2-'+(i+1)+'-forecast').append('<img id="days-icon-'+(i+1)+'-forecast"><br>');
+      $('#div-hours-2-'+(i+1)+'-forecast').append('<span class="days-temp-2-forecast" id="days-temp-'+(i+1)+'-forecast">temp</span>');
       $('#days-hour-'+(i+1)+'-forecast').html(json.forecast.forecastday[1].hour[i].time.substring(11,16));
       $('#days-icon-'+(i+1)+'-forecast').attr('src', json.forecast.forecastday[1].hour[i].condition.icon);
       $('#days-temp-'+(i+1)+'-forecast').html(Math.round(json.forecast.forecastday[1].hour[i].temp_c) + '°C');
