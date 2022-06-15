@@ -12,15 +12,15 @@ class HttpServ {
       error: function (xhr, exception) {
         let msg;
         if (xhr.status === 0) {
-          msg = 'Pas d\'accès à la ressource serveur demandée !';
+          msg = 'No access to the requested resource...';
         } else if (xhr.status === 401) {
-          msg = 'La clé API n\'est pas fournie ou est invalide !';
+          msg = 'The API key is not provided or is invalid...';
         } else if (xhr.status === 400) {
-          msg = 'Erreur dans la ville entrée...';
+          msg = 'Error with city entry...';
         } else if (exception === 403) {
-          msg = 'Le nombre de call par mois a été dépassé !';
+          msg = 'The number of calls available to the API has been exceeded...';
         } else {
-          msg = 'Erreur inconnue : \n' + xhr.responseText;
+          msg = 'Unknown error : ' + xhr.responseText;
         }
         httpErrorCallbackFn(msg);
       },
