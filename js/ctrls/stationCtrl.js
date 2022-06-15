@@ -17,7 +17,7 @@ class StationCtrl {
       $("#city-title").html(json.location.name);
       $("#city-icon").attr("src", 'https:'+json.current.condition.icon);
       $("#text-icon").html(json.current.condition.text);
-    },()=>{
+    }, () => {
       indexCtrl.loadHome();
     });
   }

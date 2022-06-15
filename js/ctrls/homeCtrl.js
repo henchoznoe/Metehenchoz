@@ -31,9 +31,6 @@ class HomeCtrl {
   }
 
   events() {
-    $("#link-station-text-home").click(() => {
-      $("#a-station").click();
-    });
     $("#weather-1").click(() => {
       indexCtrl.changeViewToStation(HOME_CITY1);
     });

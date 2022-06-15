@@ -22,7 +22,7 @@ class ForecastCtrl {
         $('#maxTemp-'+i+'-forecast').html(json.forecast.forecastday[i-1].day.maxtemp_c + '°C');
         for (let j = 1; j <= (json.forecast.forecastday[i-1].hour).length; j++) {
           $('#div-days-'+i+'-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-'+i+'-'+j+'-forecast"></div>');
-          $('#div-hours-'+i+'-'+j+'-forecast').append('<span id="days-hour-'+i+'-'+j+'-forecast"></span><br><img id="days-icon-'+i+'-'+j+'-forecast"><br><span id="days-temp-'+i+'-'+j+'-forecast">temp</span>');
+          $('#div-hours-'+i+'-'+j+'-forecast').append('<span id="days-hour-'+i+'-'+j+'-forecast"></span><br><img id="days-icon-'+i+'-'+j+'-forecast"><br><span id="days-temp-'+i+'-'+j+'-forecast"></span>');
           $('#days-hour-'+i+'-'+j+'-forecast').html(json.forecast.forecastday[i-1].hour[j-1].time.substring(11,16));
           $('#days-icon-'+i+'-'+j+'-forecast').attr('src', json.forecast.forecastday[i-1].hour[j-1].condition.icon);
           $('#days-temp-'+i+'-'+j+'-forecast').html(Math.round(json.forecast.forecastday[i-1].hour[j-1].temp_c) + '°C');
