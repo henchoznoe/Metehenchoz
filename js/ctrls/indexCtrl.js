@@ -11,6 +11,7 @@ $().ready(function () {
 });
 
 class IndexCtrl {
+
   constructor() {
     this.loadIcon();
     this.loadHome();
@@ -28,7 +29,8 @@ class IndexCtrl {
 
   // show http errors
   showHttpErrors(msg) {
-    //alert(msg);
+    $("#liveToast").toast("show");
+    $('#toast-error').html(msg);
   }
 
   // Close navbar collapse when link clicked ( to have better experience on mobile phone )

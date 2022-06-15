@@ -18,6 +18,9 @@ class StationCtrl {
       $("#city-icon").attr("src", 'https:'+json.current.condition.icon);
       $("#text-icon").html(json.current.condition.text);
     });
+    if($("#city-title").html() !== ""){
+        indexCtrl.loadHome();  //par valentino Iliev
+    }
   }
 
   loadCurrent(cityEntered) {

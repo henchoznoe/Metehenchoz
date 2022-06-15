@@ -16,8 +16,8 @@ class HttpServ {
         } else if (xhr.status === 401) {
           msg = 'La clé API n\'est pas fournie ou est invalide !';
         } else if (xhr.status === 400) {
-          msg = 'Erreur dans la l\'URL fournie';
-        } else if (exception === '403') {
+          msg = 'Erreur dans la ville entrée...';
+        } else if (exception === 403) {
           msg = 'Le nombre de call par mois a été dépassé !';
         } else {
           msg = 'Erreur inconnue : \n' + xhr.responseText;
