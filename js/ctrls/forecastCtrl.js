@@ -13,63 +13,27 @@ class ForecastCtrl {
 
   fillAll(cityEntered) {
     httpServ.getForecast(cityEntered, (json) => {
-      this.fillForecast1(json);
-      this.fillForecast2(json);
-      this.fillForecast3(json);
+      this.fillAllForecast(json);
     });
   }
 
-  fillForecast1(json) {
-    $('#date-1-forecast').html(new Date(json.forecast.forecastday[0].date).toDateString());
-    $('#sunrise-1-forecast').html(json.forecast.forecastday[0].astro.sunrise);
-    $('#sunset-1-forecast').html(json.forecast.forecastday[0].astro.sunset);
-    $('#minTemp-1-forecast').html(json.forecast.forecastday[0].day.mintemp_c + '°C');
-    $('#avgTemp-1-forecast').html(json.forecast.forecastday[0].day.avgtemp_c + '°C');
-    $('#maxTemp-1-forecast').html(json.forecast.forecastday[0].day.maxtemp_c + '°C');
-    for (let i = 0; i < (json.forecast.forecastday[0].hour).length; i++) {
-      $('#div-days-1-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-1-'+(i+1)+'-forecast"></div>');
-      $('#div-hours-1-'+(i+1)+'-forecast').append('<span id="days-hour-1-'+(i+1)+'-forecast"></span><br>');
-      $('#div-hours-1-'+(i+1)+'-forecast').append('<img id="days-icon-1-'+(i+1)+'-forecast"><br>');
-      $('#div-hours-1-'+(i+1)+'-forecast').append('<span id="days-temp-1-'+(i+1)+'-forecast">temp</span>');
-      $('#days-hour-1-'+(i+1)+'-forecast').html(json.forecast.forecastday[0].hour[i].time.substring(11,16));
-      $('#days-icon-1-'+(i+1)+'-forecast').attr('src', json.forecast.forecastday[0].hour[i].condition.icon);
-      $('#days-temp-1-'+(i+1)+'-forecast').html(Math.round(json.forecast.forecastday[0].hour[i].temp_c) + '°C');
-    }
-  }
-
-  fillForecast2(json) {
-    $('#date-2-forecast').html(new Date(json.forecast.forecastday[1].date).toDateString());
-    $('#sunrise-2-forecast').html(json.forecast.forecastday[1].astro.sunrise);
-    $('#sunset-2-forecast').html(json.forecast.forecastday[1].astro.sunset);
-    $('#minTemp-2-forecast').html(json.forecast.forecastday[1].day.mintemp_c + '°C');
-    $('#avgTemp-2-forecast').html(json.forecast.forecastday[1].day.avgtemp_c + '°C');
-    $('#maxTemp-2-forecast').html(json.forecast.forecastday[1].day.maxtemp_c + '°C');
-    for (let i = 0; i < (json.forecast.forecastday[1].hour).length; i++) {
-      $('#div-days-2-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-2-'+(i+1)+'-forecast"></div>');
-      $('#div-hours-2-'+(i+1)+'-forecast').append('<span id="days-hour-2-'+(i+1)+'-forecast"></span><br>');
-      $('#div-hours-2-'+(i+1)+'-forecast').append('<img id="days-icon-2-'+(i+1)+'-forecast"><br>');
-      $('#div-hours-2-'+(i+1)+'-forecast').append('<span id="days-temp-2-'+(i+1)+'-forecast">temp</span>');
-      $('#days-hour-2-'+(i+1)+'-forecast').html(json.forecast.forecastday[1].hour[i].time.substring(11,16));
-      $('#days-icon-2-'+(i+1)+'-forecast').attr('src', json.forecast.forecastday[1].hour[i].condition.icon);
-      $('#days-temp-2-'+(i+1)+'-forecast').html(Math.round(json.forecast.forecastday[1].hour[i].temp_c) + '°C');
-    }
-  }
-
-  fillForecast3(json) {
-    $('#date-3-forecast').html(new Date(json.forecast.forecastday[2].date).toDateString());
-    $('#sunrise-3-forecast').html(json.forecast.forecastday[2].astro.sunrise);
-    $('#sunset-3-forecast').html(json.forecast.forecastday[2].astro.sunset);
-    $('#minTemp-3-forecast').html(json.forecast.forecastday[2].day.mintemp_c + '°C');
-    $('#avgTemp-3-forecast').html(json.forecast.forecastday[2].day.avgtemp_c + '°C');
-    $('#maxTemp-3-forecast').html(json.forecast.forecastday[2].day.maxtemp_c + '°C');
-    for (let i = 0; i < (json.forecast.forecastday[2].hour).length; i++) {
-      $('#div-days-3-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-3-'+(i+1)+'-forecast"></div>');
-      $('#div-hours-3-'+(i+1)+'-forecast').append('<span id="days-hour-3-'+(i+1)+'-forecast"></span><br>');
-      $('#div-hours-3-'+(i+1)+'-forecast').append('<img id="days-icon-3-'+(i+1)+'-forecast"><br>');
-      $('#div-hours-3-'+(i+1)+'-forecast').append('<span id="days-temp-3-'+(i+1)+'-forecast">temp</span>');
-      $('#days-hour-3-'+(i+1)+'-forecast').html(json.forecast.forecastday[2].hour[i].time.substring(11,16));
-      $('#days-icon-3-'+(i+1)+'-forecast').attr('src', json.forecast.forecastday[2].hour[i].condition.icon);
-      $('#days-temp-3-'+(i+1)+'-forecast').html(Math.round(json.forecast.forecastday[2].hour[i].temp_c) + '°C');
+  fillAllForecast(json) {
+    for (let i = 1; i <= 3; i++) {
+      $('#date-'+i+'-forecast').html(new Date(json.forecast.forecastday[i-1].date).toDateString());
+      $('#sunrise-'+i+'-forecast').html(json.forecast.forecastday[i-1].astro.sunrise);
+      $('#sunset-'+i+'-forecast').html(json.forecast.forecastday[i-1].astro.sunset);
+      $('#minTemp-'+i+'-forecast').html(json.forecast.forecastday[i-1].day.mintemp_c + '°C');
+      $('#avgTemp-'+i+'-forecast').html(json.forecast.forecastday[i-1].day.avgtemp_c + '°C');
+      $('#maxTemp-'+i+'-forecast').html(json.forecast.forecastday[i-1].day.maxtemp_c + '°C');
+      for (let j = 1; j <= (json.forecast.forecastday[i-1].hour).length; j++) {
+        $('#div-days-'+i+'-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-'+i+'-'+j+'-forecast"></div>');
+        $('#div-hours-'+i+'-'+j+'-forecast').append('<span id="days-hour-'+i+'-'+j+'-forecast"></span><br>');
+        $('#div-hours-'+i+'-'+j+'-forecast').append('<img id="days-icon-'+i+'-'+j+'-forecast"><br>');
+        $('#div-hours-'+i+'-'+j+'-forecast').append('<span id="days-temp-'+i+'-'+j+'-forecast">temp</span>');
+        $('#days-hour-'+i+'-'+j+'-forecast').html(json.forecast.forecastday[i-1].hour[j-1].time.substring(11,16));
+        $('#days-icon-'+i+'-'+j+'-forecast').attr('src', json.forecast.forecastday[i-1].hour[j-1].condition.icon);
+        $('#days-temp-'+i+'-'+j+'-forecast').html(Math.round(json.forecast.forecastday[i-1].hour[j-1].temp_c) + '°C');
+      }
     }
   }
 
