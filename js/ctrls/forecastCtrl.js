@@ -16,7 +16,6 @@ class ForecastCtrl {
       this.fillForecast1(json);
       this.fillForecast2(json);
       this.fillForecast3(json);
-      console.log(json);
     });
   }
 
@@ -60,7 +59,18 @@ class ForecastCtrl {
     $('#date-3-forecast').html(new Date(json.forecast.forecastday[2].date).toDateString());
     $('#sunrise-3-forecast').html(json.forecast.forecastday[2].astro.sunrise);
     $('#sunset-3-forecast').html(json.forecast.forecastday[2].astro.sunset);
-    
+    $('#minTemp-3-forecast').html(json.forecast.forecastday[2].day.mintemp_c + '°C');
+    $('#avgTemp-3-forecast').html(json.forecast.forecastday[2].day.avgtemp_c + '°C');
+    $('#maxTemp-3-forecast').html(json.forecast.forecastday[2].day.maxtemp_c + '°C');
+    for (let i = 0; i < (json.forecast.forecastday[2].hour).length; i++) {
+      $('#div-days-3-forecast').append('<div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6 text-center p-3" id="div-hours-3-'+(i+1)+'-forecast"></div>');
+      $('#div-hours-3-'+(i+1)+'-forecast').append('<span id="days-hour-3-'+(i+1)+'-forecast"></span><br>');
+      $('#div-hours-3-'+(i+1)+'-forecast').append('<img id="days-icon-3-'+(i+1)+'-forecast"><br>');
+      $('#div-hours-3-'+(i+1)+'-forecast').append('<span id="days-temp-3-'+(i+1)+'-forecast">temp</span>');
+      $('#days-hour-3-'+(i+1)+'-forecast').html(json.forecast.forecastday[2].hour[i].time.substring(11,16));
+      $('#days-icon-3-'+(i+1)+'-forecast').attr('src', json.forecast.forecastday[2].hour[i].condition.icon);
+      $('#days-temp-3-'+(i+1)+'-forecast').html(Math.round(json.forecast.forecastday[2].hour[i].temp_c) + '°C');
+    }
   }
 
 }
