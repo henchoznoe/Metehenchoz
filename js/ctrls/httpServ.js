@@ -64,7 +64,7 @@ class HttpServ {
     });
   }
 
-  getForecast(city, successCallBack) {
+  getForecast(city, successCallBack,errorCall) {
     $.ajax({
       url: 'https://api.weatherapi.com/v1/forecast.json',
       method: 'GET',
@@ -74,7 +74,8 @@ class HttpServ {
         q: city,
         days: 3
       },
-      success: successCallBack
+      success: successCallBack,
+      error: errorCall
     });
   }
 }
