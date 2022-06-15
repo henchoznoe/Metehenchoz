@@ -5,5 +5,4 @@ const HOME_CITY2_TIMEZONE = 'Europe/Paris';
 const HOME_CITY3 = 'London';
 const HOME_CITY3_TIMEZONE = 'Europe/London';
 
-
 const STATION_CITY_DEFAULT = 'New York';
