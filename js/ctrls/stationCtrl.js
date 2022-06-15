@@ -5,6 +5,7 @@
 */
 
 class StationCtrl {
+  
   constructor(cityEntered) {
     this.cityEntered = cityEntered;
     this.loadCurrent(cityEntered);

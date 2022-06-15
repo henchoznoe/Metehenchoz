@@ -5,6 +5,7 @@
 */
 
 class HttpServ {
+
   constructor() {}
 
   httpErrors(httpErrorCallbackFn) {
@@ -58,13 +59,13 @@ class HttpServ {
       contentType: 'application/json; charset=utf-8',
       data: {
         key: API_KEY,
-        q: city,
+        q: city
       },
       success: successCallBack
     });
   }
 
-  getForecast(city, successCallBack,errorCall) {
+  getForecast(city, successCallBack, errorCallBack) {
     $.ajax({
       url: 'https://api.weatherapi.com/v1/forecast.json',
       method: 'GET',
@@ -75,7 +76,7 @@ class HttpServ {
         days: 3
       },
       success: successCallBack,
-      error: errorCall
+      error: errorCallBack
     });
   }
 }

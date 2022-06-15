@@ -5,6 +5,7 @@
 */
 
 class CurrentCtrl {
+  
   constructor(cityEntered) {
     this.cityEntered = cityEntered;
     this.loadEvents(cityEntered);

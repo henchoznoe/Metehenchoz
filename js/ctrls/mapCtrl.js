@@ -5,10 +5,10 @@
 */
 
 class MapCtrl {
+
   constructor(citySearched) {
     this.citySearched = citySearched;
     this.loadMap(citySearched);
-    
   }
 
   loadMap(citySearched) {

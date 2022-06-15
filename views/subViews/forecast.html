@@ -1,7 +1,15 @@
+<!-- 
+   But     : Forecast sub view 
+   Auteur  : Noé Henchoz
+   Date    : 08.06.2022 / v1.0 
+-->
+
 <!DOCTYPE html>
 
+<!-- Start accordion for the 3 days -->
 <div class="accordion accordion-forecast pb-5" id="accordionForecast">
 
+    <!-- Start first accordion item -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button title-accordion-items" type="button" data-bs-toggle="collapse"
@@ -50,7 +58,7 @@
                         <p class="desc-forecast">Maximum temperature</p>
                     </div>
                 </div>
-                <!-- Start temperature min/avg/max row -->
+                <!-- End temperature min/avg/max row -->
 
                 <!-- Start forecast for the day -->
                 <div class="row row-forecast div-days-1-forecast" id="div-days-1-forecast"></div>
@@ -59,7 +67,9 @@
             </div>
         </div>
     </div>
+    <!-- End first accordion item -->
 
+    <!-- Start second accordion item -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
             <button class="accordion-button collapsed title-accordion-items" type="button" data-bs-toggle="collapse"
@@ -108,7 +118,7 @@
                         <p class="desc-forecast">Maximum temperature</p>
                     </div>
                 </div>
-                <!-- Start temperature min/avg/max row -->
+                <!-- End temperature min/avg/max row -->
 
                 <!-- Start forecast for the day -->
                 <div class="row row-forecast div-days-2-forecast" id="div-days-2-forecast"></div>
@@ -117,7 +127,9 @@
             </div>
         </div>
     </div>
+    <!-- End second accordion item -->
 
+    <!-- Start third accordion item -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed title-accordion-items" type="button" data-bs-toggle="collapse"
@@ -166,7 +178,7 @@
                         <p class="desc-forecast">Maximum temperature</p>
                     </div>
                 </div>
-                <!-- Start temperature min/avg/max row -->
+                <!-- End temperature min/avg/max row -->
 
                 <!-- Start forecast for the day -->
                 <div class="row row-forecast div-days-3-forecast" id="div-days-3-forecast"></div>
@@ -175,5 +187,7 @@
             </div>
         </div>
     </div>
+    <!-- End third accordion item -->
 
 </div>
+<!-- End accordion for the 3 days -->

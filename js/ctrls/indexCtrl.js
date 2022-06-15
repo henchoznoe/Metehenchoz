@@ -27,7 +27,7 @@ class IndexCtrl {
     }
   }
 
-  // show http errors
+  // show http errors in toast
   showHttpErrors(msg) {
     $("#liveToast").toast("show");
     $('#toast-error').html(msg);
@@ -50,12 +50,11 @@ class IndexCtrl {
   loadStation(city) {
     httpServ.loadView('station', () => new StationCtrl(city));
   }
-
+  
   changeViewToStation(cityEntered) {
     this.hideNavCollapsed();
     this.loadStation(cityEntered);
     $('#a-station').addClass('active');
-    new StationCtrl(cityEntered);
     $('#nav-in-search').val('');
   }
 
@@ -95,13 +94,9 @@ class IndexCtrl {
     });
 
     $('#nav-btn-locate').click(() => {
-      $('#nav-in-search').val('');
-      this.hideNavCollapsed();
       navigator.geolocation.getCurrentPosition((position) => {
-        let latLon = position.coords.latitude.toFixed(3) + ',' + position.coords.longitude.toFixed(3);
-        this.loadStation(latLon);
-        $('#a-station').addClass('active');
-        new StationCtrl(latLon);
+        let latLon = position.coords.latitude + ',' + position.coords.longitude;
+        this.changeViewToStation(latLon);
       });
     });
   }

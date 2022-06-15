@@ -5,6 +5,7 @@
 */
 
 class HomeCtrl {
+
   constructor() {
     this.events();
     this.loadWeather(HOME_CITY1,"#title-city1","#icon1","#temp-city1",HOME_CITY1_TIMEZONE);
@@ -24,7 +25,7 @@ class HomeCtrl {
     let options = {
       timeZone: timeZone,
       hour: "numeric",
-      minute: "numeric",
+      minute: "numeric"
     },
     formatter = new Intl.DateTimeFormat([], options);
     return formatter.format(new Date())
