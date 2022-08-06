@@ -26,7 +26,7 @@ body::-webkit-scrollbar-thumb {
 /* Imports fonts */
 @font-face {
   font-family: Varela;
-  src: url("../../fonts/VarelaRound-Regular.ttf");
+  src: url('../../fonts/VarelaRound-Regular.ttf');
 }
 
 /* Navbar */
@@ -50,7 +50,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Links in navbar animation */
 .items-nav::after {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 2px;
@@ -98,17 +98,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .weather-1 {
-  background-image: url("../../img/newyork.jpg");
+  background-image: url('../../img/newyork.jpg');
   background-size: cover;
 }
 
 .weather-2 {
-  background-image: url("../../img/paris.jpg");
+  background-image: url('../../img/paris.jpg');
   background-size: cover;
 }
 
 .weather-3 {
-  background-image: url("../../img/london.jpg");
+  background-image: url('../../img/london.jpg');
   background-size: cover;
 }
 .icon {
@@ -211,6 +211,9 @@ footer {
   .mapid {
     height: 600px;
   }
+  .weather-home {
+    height: 220px;
+  }
 }
 
 /* Keyframes animations */
@@ -277,7 +280,7 @@ footer {
 
 .accordion-button:focus {
   box-shadow: none;
-  border-color: rgba(0,0,0,.125);
+  border-color: rgba(0, 0, 0, 0.125);
 }
 
 .accordion-body {
